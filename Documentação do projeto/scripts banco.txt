@@ -1,0 +1,9 @@
+CREATE DATABASE clientefiel;
+
+CREATE TABLE cliente (
+id int auto_increment primary key,
+nome VARCHAR(50) NOT NULL,
+cpf VARCHAR(11) UNIQUE,
+endereço TEXT NOT NULL,
+telefone VARCHAR(18)
+);

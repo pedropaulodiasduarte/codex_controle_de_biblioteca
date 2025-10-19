@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="br.com.clientefiel.application.TelaPrincipalController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <Label text="Sistema Cliente Fiel" alignment="CENTER" >
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Label>
+    <Label text="Menu Principal" alignment="CENTER" />
+
+    <Separator />
+
+    <HBox alignment="CENTER" spacing="20.0">
+
+        <Button text="Cadastrar Cliente" onAction="#abrirCadastroCliente" prefWidth="150.0"/>
+
+        <Button text="Listar Clientes" prefWidth="150.0" disable="true" />
+
+    </HBox>
+
+</VBox>
