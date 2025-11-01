@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane alignment="TOP_CENTER" hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="br.com.clientefiel.application.CadastrarClienteController">
+          fx:controller="br.com.codexcb.application.CadastrarClienteController">
 
     <padding>
         <Insets bottom="20.0" left="25.0" right="25.0" top="25.0" />

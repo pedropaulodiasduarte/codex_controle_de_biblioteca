@@ -1,4 +1,4 @@
-package br.com.clientefiel.application.model;
+package br.com.codexcb.application.model;
 
 public class Pessoa {
     private int id;

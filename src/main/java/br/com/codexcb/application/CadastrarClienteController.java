@@ -1,11 +1,9 @@
-package br.com.clientefiel.application;
+package br.com.codexcb.application;
 
-import br.com.clientefiel.application.model.Pessoa;
+import br.com.codexcb.application.model.Pessoa;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
