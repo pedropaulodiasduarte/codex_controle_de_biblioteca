@@ -64,12 +64,7 @@ O banco de dados utilizado é o **MySQL 8.4**.
 ### 📚 Documentação
 
 Toda a documentação do projeto, incluindo mapeamento de classes e levantamento de requisitos, está disponível no link abaixo:
-
-👉 [Documentação do Projeto](https://docs.google.com/document/d/12evD0nprKaIVjwZMbK5c7CmGryxthEIfa2f0B9yw2U0/edit?tab=t.0)
-
-Já o O Google Drive do projeto pode ser acessado no link abaixo:
-👉
-[Drive](https://drive.google.com/drive/folders/1ozoUerl6N296LCkiSZn7xWSsZ6NG3e7v?usp=sharing)
+[Link Drive - Clique Aqui](https://drive.google.com/drive/folders/1ozoUerl6N296LCkiSZn7xWSsZ6NG3e7v?usp=sharing)
 
 ### 📋 Acompanhamento de Tarefas
 
