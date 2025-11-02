@@ -10,4 +10,6 @@ module br.com.clientefiel.clientefiel {
 
     opens br.com.codexcb.application to javafx.fxml;
     exports br.com.codexcb.application;
+    exports br.com.codexcb.application.dao;
+    opens br.com.codexcb.application.dao to javafx.fxml;
 }

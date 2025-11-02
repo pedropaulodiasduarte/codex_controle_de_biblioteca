@@ -1,5 +1,6 @@
 package br.com.codexcb.application;
 
+import br.com.codexcb.application.dao.ConectaDatabase;
 import br.com.codexcb.application.model.Pessoa;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
