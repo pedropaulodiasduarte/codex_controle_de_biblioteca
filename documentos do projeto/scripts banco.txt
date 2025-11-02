@@ -1,4 +1,4 @@
-CREATE DATABASE clientefiel;
+CREATE DATABASE codexcb;
 
 CREATE TABLE cliente (
 id int auto_increment primary key,

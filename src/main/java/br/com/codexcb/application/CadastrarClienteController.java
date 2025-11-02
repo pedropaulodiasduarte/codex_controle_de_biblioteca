@@ -41,7 +41,8 @@ public class CadastrarClienteController {
         // Via PreparedStatement , os placeholders ?,  são preenchidos.
         String sql = "INSERT INTO cliente VALUES (?, ?, ?, ?, ?)";
 
-        try (Connection connection = ConectaDatabase.getConnection();
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        try (Connection connection = conectaDatabase.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setNull(1, Types.INTEGER);

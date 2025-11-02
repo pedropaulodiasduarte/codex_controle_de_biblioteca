@@ -5,16 +5,21 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConectaDatabase {
+    private static ConectaDatabase INSTANCE_SINGLETON = new ConectaDatabase(); //inicialização eager, garantindo thread-safe, para minimizar risco de 2 instanciações
+    private Connection connection = null;
     private static final String URL = "jdbc:mysql://localhost:3306/clientefiel";
     private static final String USER = "root";
     private static final String PASSWORD = "root";
-    private static Connection connection = null;
 
-    //Para ser singleton, devo então ter o construtor privado, para que não ocorra instanciações duplas.
+    //Para ser singleton, deve então ter o construtor privado, para que não ocorra instanciações duplas.
     private ConectaDatabase() {
     }
 
-    public static Connection getConnection() throws SQLException {
+    public static ConectaDatabase getInstanceSingleton(){
+        return INSTANCE_SINGLETON;
+    }
+
+    public  Connection getConnection() throws SQLException {
         //Constante que, limita em 2segundos como tempo máximo, para teste de conexão ao banco de dados
         final int VALIDATION_TIMEOUT_SECONDS = 2;
 
@@ -36,7 +41,7 @@ public class ConectaDatabase {
     }
 
     //método que inicia conexão com banco de dados
-    private static void initiateConnection() throws SQLException {
+    private  void initiateConnection() throws SQLException {
         connection = DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }
