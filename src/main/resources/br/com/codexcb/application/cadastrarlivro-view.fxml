@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="413.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+   <children>
+      <Pane layoutY="1.0" prefHeight="421.0" prefWidth="632.0">
+         <children>
+            <Label layoutX="105.0" layoutY="56.0" prefHeight="35.0" prefWidth="408.0" text="Adicione um novo livro ao acervo da biblioteca">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="96.0" layoutY="-5.0" prefHeight="61.0" prefWidth="408.0" text="Cadastrar Novo Livro" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="Times New Roman Bold" size="42.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+            <Button fx:id="btnvoltar" layoutX="516.0" layoutY="26.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="95.0" style="-fx-background-color: blue;" text="Voltar " textFill="#0d021af3">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font></Button>
+            <ImageView fx:id="imglivro" fitHeight="141.0" fitWidth="159.0" layoutX="31.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <image>
+                  <Image url="@../../../../../../../../../14578405-icone-de-livro-aberto-em-estilo-cartoon-vetor.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="28.0" layoutY="262.0" prefHeight="17.0" prefWidth="83.0" text="Titulo*">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txttitulo" layoutX="28.0" layoutY="294.0" prefHeight="25.0" prefWidth="167.0" />
+            <TextField fx:id="txtautor" layoutX="28.0" layoutY="368.0" prefHeight="25.0" prefWidth="167.0" />
+            <Label layoutX="32.0" layoutY="337.0" prefHeight="17.0" prefWidth="83.0" text="Autor(a)*">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnadclivro" layoutX="315.0" layoutY="376.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="141.0" style="-fx-background-color: blue;" text="+ Adicionar Livro">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btncancelar" layoutX="493.0" layoutY="376.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="112.0" style="-fx-background-color: blue;" text="Cancelar">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="txtisbn" layoutX="216.0" layoutY="134.0" prefHeight="25.0" prefWidth="185.0" />
+            <TextField fx:id="txtidioma" layoutX="217.0" layoutY="202.0" prefHeight="25.0" prefWidth="185.0" />
+            <TextField fx:id="txteditora" layoutX="216.0" layoutY="273.0" prefHeight="25.0" prefWidth="185.0" />
+            <TextField fx:id="txtdatapub" layoutX="220.0" layoutY="337.0" prefHeight="25.0" prefWidth="185.0" />
+            <Label layoutX="214.0" layoutY="108.0" prefHeight="17.0" prefWidth="83.0" text="ISBN*">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="215.0" layoutY="177.0" prefHeight="17.0" prefWidth="83.0" text="Idioma*">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="219.0" layoutY="247.0" prefHeight="17.0" prefWidth="83.0" text="Editora*">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="218.0" layoutY="313.0" prefHeight="23.0" prefWidth="185.0" text="Data de Publicação*">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtqntidade" layoutX="432.0" layoutY="215.0" prefHeight="25.0" prefWidth="167.0" />
+            <TextField fx:id="txtdisponivel" layoutX="432.0" layoutY="272.0" prefHeight="25.0" prefWidth="167.0" />
+            <TextField fx:id="txtlocalizacao" layoutX="430.0" layoutY="337.0" prefHeight="25.0" prefWidth="167.0" />
+            <Label layoutX="432.0" layoutY="109.0" prefHeight="17.0" prefWidth="83.0" text="Gênero*">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="431.0" layoutY="191.0" prefHeight="23.0" prefWidth="112.0" text="Quantidade*">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="431.0" layoutY="247.0" prefHeight="23.0" prefWidth="125.0" text="Disponível*">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="431.0" layoutY="313.0" prefHeight="23.0" prefWidth="125.0" text="Localização*">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="rbtnmasculino" layoutX="434.0" layoutY="130.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Masculino" />
+            <RadioButton fx:id="rbtnfeminino" layoutX="434.0" layoutY="155.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="95.0" text="Feminino" />
+            <RadioButton fx:id="rbtnoutros" layoutX="549.0" layoutY="130.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Outros" />
+
+
+         </children></Pane>
+   </children>
+</AnchorPane>
