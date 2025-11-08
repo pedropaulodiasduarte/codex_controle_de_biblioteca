@@ -1,7 +1,9 @@
 package br.com.codexcb.application;
 
+import br.com.codexcb.application.dao.ClienteDAO;
+import br.com.codexcb.application.dao.ClienteRepository;
 import br.com.codexcb.application.dao.ConectaDatabase;
-import br.com.codexcb.application.model.Pessoa;
+import br.com.codexcb.application.model.Usuario;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -26,47 +28,16 @@ public class CadastrarClienteController {
         String cpf = cpfField.getText();
         String endereco = enderecoField.getText();
         String telefone = telefoneField.getText();
-
+        String email = "email@dominio.com.br";
 
         if (nome.trim().isEmpty()) {
             mensagemLabel.setText("O campo Nome é obrigatório!");
             mensagemLabel.setStyle("-fx-text-fill: red;");
             return;
         }
-
-        Pessoa pessoa = new Pessoa(nome, cpf, endereco, telefone);
-
-        // por questões de segurança, ? serve para previnir o SQL injection. Também, melhora desempenho
-        // se fosse feito via concatenção de Strings, a SQL injection poderia acontecer
-        // Via PreparedStatement , os placeholders ?,  são preenchidos.
-        String sql = "INSERT INTO cliente VALUES (?, ?, ?, ?, ?)";
-
-        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
-        try (Connection connection = conectaDatabase.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-
-            preparedStatement.setNull(1, Types.INTEGER);
-            preparedStatement.setString(2, pessoa.getNome());
-            preparedStatement.setString(3, pessoa.getCpf());
-            preparedStatement.setString(4, pessoa.getEndereco());
-            preparedStatement.setString(5, pessoa.getTelefone());
-
-            int linhasAfetadas = preparedStatement.executeUpdate();
-
-            if (linhasAfetadas > 0) {
-                mensagemLabel.setText("Cliente '" + nome + "' cadastrado com sucesso!");
-                mensagemLabel.setStyle("-fx-text-fill: green;");
-                limparCampos();
-            } else {
-                mensagemLabel.setText("Erro ao cadastrar cliente. Nenhuma linha afetada.");
-                mensagemLabel.setStyle("-fx-text-fill: red;");
-            }
-
-        } catch (SQLException e) {
-            mensagemLabel.setText("Erro de banco de dados: " + e.getMessage());
-            mensagemLabel.setStyle("-fx-text-fill: red;");
-            e.printStackTrace();
-        }
+        ClienteRepository clienteRepository = new ClienteDAO();
+        Usuario cliente = new Usuario(nome, cpf, endereco, telefone, email);
+        clienteRepository.cadastrarCliente(cliente);
     }
 
     private void limparCampos() {

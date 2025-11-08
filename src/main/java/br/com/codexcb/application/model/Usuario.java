@@ -1,17 +1,27 @@
 package br.com.codexcb.application.model;
 
-public class Pessoa {
+public class Usuario {
     private int id;
     private String nome;
     private String cpf;
     private String endereco;
     private String telefone;
+    private String email;
 
-    public Pessoa(String nome, String cpf, String endereco, String telefone) {
+    public Usuario (String nome, String cpf, String endereco, String telefone, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
         this.telefone = telefone;
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNome() {

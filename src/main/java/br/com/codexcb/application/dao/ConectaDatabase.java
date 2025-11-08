@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConectaDatabase {
     private static ConectaDatabase INSTANCE_SINGLETON = new ConectaDatabase(); //inicialização eager, garantindo thread-safe, para minimizar risco de 2 instanciações
     private Connection connection = null;
-    private static final String URL = "jdbc:mysql://localhost:3306/clientefiel";
+    private static final String URL = "jdbc:mysql://localhost:3306/codexcb";
     private static final String USER = "root";
     private static final String PASSWORD = "root";
 
