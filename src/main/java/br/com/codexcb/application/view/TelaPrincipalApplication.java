@@ -1,4 +1,4 @@
-package br.com.codexcb.application;
+package br.com.codexcb.application.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

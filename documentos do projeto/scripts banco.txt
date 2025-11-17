@@ -8,3 +8,27 @@ endereço TEXT NOT NULL,
 telefone VARCHAR(18),
 email VARCHAR(70)
 );
+
+CREATE TABLE localizacao(
+id int auto_increment primary key,
+corredor int not null,
+prateleira int not null,
+estante int not null,
+sala int not null,
+andar int not null
+);
+
+
+CREATE TABLE livro(
+id int auto_increment primary key,
+titulo varchar (80) not null,
+autor varchar (80) not null,
+isbnCodigo varchar (20) not null,
+idioma varchar (35) not null,
+editora varchar (100) not null,
+dataPublicacao date not null,
+copia int not null,
+gênero varchar (50) not null,
+idLocalizacaoo int not null,
+foreign key (idLocalizacao) references localizacao (id)
+);

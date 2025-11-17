@@ -8,8 +8,16 @@ module br.com.clientefiel.clientefiel {
     requires net.synedra.validatorfx;
     requires mysql.connector.j;
 
-    opens br.com.codexcb.application to javafx.fxml;
+
     exports br.com.codexcb.application;
+
+    opens br.com.codexcb.application to javafx.fxml;
+
     exports br.com.codexcb.application.dao;
+
     opens br.com.codexcb.application.dao to javafx.fxml;
+
+    exports br.com.codexcb.application.view;
+
+    opens br.com.codexcb.application.view to javafx.fxml;
 }

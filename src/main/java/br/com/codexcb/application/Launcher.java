@@ -1,6 +1,6 @@
 package br.com.codexcb.application;
 
-import br.com.codexcb.application.dao.ConectaDatabase;
+import br.com.codexcb.application.view.TelaPrincipalApplication;
 import javafx.application.Application;
 
 public class Launcher {

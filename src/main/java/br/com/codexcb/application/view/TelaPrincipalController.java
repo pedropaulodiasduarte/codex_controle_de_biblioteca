@@ -1,4 +1,4 @@
-package br.com.codexcb.application;
+package br.com.codexcb.application.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +15,7 @@ public class TelaPrincipalController {
     @FXML
     private void abrirCadastroCliente(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("cadastrarcliente-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("cadastrarlivro-view.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

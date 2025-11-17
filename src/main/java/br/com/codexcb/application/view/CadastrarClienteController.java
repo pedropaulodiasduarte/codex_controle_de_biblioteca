@@ -1,17 +1,11 @@
-package br.com.codexcb.application;
+package br.com.codexcb.application.view;
 
 import br.com.codexcb.application.dao.ClienteDAO;
 import br.com.codexcb.application.dao.ClienteRepository;
-import br.com.codexcb.application.dao.ConectaDatabase;
 import br.com.codexcb.application.model.Usuario;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Types;
 
 public class CadastrarClienteController {
     @FXML private Label documentoLabel;
