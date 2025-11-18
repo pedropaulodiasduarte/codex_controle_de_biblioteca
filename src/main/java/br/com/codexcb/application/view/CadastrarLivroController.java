@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import br.com.codexcb.application.dao.LivroDAO;
+import br.com.codexcb.application.mensagens.AlertErrorCreator;
+import br.com.codexcb.application.mensagens.AlertInformationCreator;
+import br.com.codexcb.application.mensagens.MessageCreator;
 import br.com.codexcb.application.model.Livro;
 import br.com.codexcb.application.service.LivroService;
 import javafx.fxml.FXML;
@@ -17,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 
 public class CadastrarLivroController {
+    private MessageCreator messageCreator;
     @FXML
     private Button btnvoltar;
 
@@ -64,38 +68,26 @@ public class CadastrarLivroController {
     private void clickAdicionarLivro(ActionEvent event) {
         if (validaDados()) {
             if (insertDadosLivro(extrairDadosView())){
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Sucesso!");
-                alert.setHeaderText(null); // Remove o cabeçalho
-                alert.setContentText("Livro cadastrado com sucesso no acervo.");
-                alert.showAndWait(); // Exibe o popup e espera o usuário fechar
+                messageCreator = new AlertInformationCreator();
+                messageCreator.messageUser("Sucesso!", "Livro cadastrado com sucesso no acervo.");
 
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("telaprincipal-view.fxml"));
                     Parent root = loader.load();
-
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
                     Scene scene = new Scene(root);
-
                     stage.setScene(scene);
                     stage.setTitle("Tela Principal");
 
                 } catch (IOException e) {
                     e.printStackTrace();
-                    alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Erro!");
-                    alert.setHeaderText(null); // Remove o cabeçalho
-                    alert.setContentText("Erro ao abrir página inicial.");
-                    alert.showAndWait(); // Exibe o popup e espera o usuário fechar
+                    messageCreator = new AlertErrorCreator();
+                    messageCreator.messageUser("Erro", "Erro ao abrir página inicial.");
                 }
             }
         } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erro!");
-            alert.setHeaderText(null); // Remove o cabeçalho
-            alert.setContentText("Atenção! É necessário preencher todos os dados para cadastrar o livro.");
-            alert.showAndWait(); // Exibe o popup e espera o usuário fechar
+            messageCreator = new AlertErrorCreator();
+            messageCreator.messageUser("Erro", "Atenção! É necessário preencher todos os dados para cadastrar o livro.");
         }
     }
 
