@@ -1,6 +1,6 @@
 CREATE DATABASE codexcb;
 
-CREATE TABLE cliente (
+CREATE TABLE leitor (
 id int auto_increment primary key,
 nome VARCHAR(50) NOT NULL,
 cpf VARCHAR(11) UNIQUE,
@@ -18,12 +18,11 @@ sala int not null,
 andar int not null
 );
 
-
 CREATE TABLE livro(
 id int auto_increment primary key,
 titulo varchar (80) not null,
 autor varchar (80) not null,
-isbnCodigo varchar (20) not null,
+isbnCodigo varchar (20) not null unique,
 idioma varchar (35) not null,
 editora varchar (100) not null,
 dataPublicacao date not null,
@@ -32,3 +31,18 @@ gênero varchar (50) not null,
 idLocalizacaoo int not null,
 foreign key (idLocalizacao) references localizacao (id)
 );
+
+create table emprestimo (
+id int auto_increment primary key,
+isbnCodigo varchar (20) not null,
+idLeitor int not null,
+dataemprestimo date not null,
+dataDevolucao date not null,
+status varchar(25) not null,
+foreign key (isbnCodigo ) references livro (isbnCodigo )
+);
+
+insert into emprestimo values (null, 1, 1, "2025-12-12", "2025-12-12", "pendente");
+select count(*) from emprestimo where isbncodigo = '1' and idLeitor=1 and status = 'pendente';
+select count(*) from emprestimo where isbncodigo = '1' and idLeitor=1 and status = 'devolvido';
+select count(*) from emprestimo;
