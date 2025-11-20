@@ -1,4 +1,4 @@
-module br.com.clientefiel.clientefiel {
+module br.com.codexcb.application {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
@@ -7,6 +7,8 @@ module br.com.clientefiel.clientefiel {
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
     requires mysql.connector.j;
+    requires javafx.graphics;
+    requires javafx.base;
 
 
     exports br.com.codexcb.application;
