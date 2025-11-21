@@ -1,31 +1,318 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="br.com.codexcb.application.view.TelaPrincipalController">
-    <padding>
-        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
-    </padding>
-
-    <Label text="Sistema Cliente Fiel" alignment="CENTER" >
-        <font>
-            <Font size="24.0" />
-        </font>
-    </Label>
-    <Label text="Menu Principal" alignment="CENTER" />
-
-    <Separator />
-
-    <HBox alignment="CENTER" spacing="20.0">
-
-        <Button text="Cadastrar Cliente" onAction="#abrirCadastroCliente" prefWidth="150.0"/>
-
-        <Button text="Listar Clientes" prefWidth="150.0" disable="true" />
-
-    </HBox>
-
-</VBox>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c7d4f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+    <children>
+        <Pane layoutX="19.0" layoutY="17.0" prefHeight="366.0" prefWidth="562.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <children>
+                <Label layoutX="215.0" layoutY="14.0" text="Menu Inicial">
+                    <font>
+                        <Font name="Times New Roman Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Pane layoutX="307.0" layoutY="92.0" prefHeight="49.0" prefWidth="131.0" style="-fx-background-color: #c7d4f6; -fx-border-radius: 5; -fx-background-radius: 7;">
+                    <children>
+                        <Label layoutX="30.0" layoutY="5.0" text="Total de Livros">
+                            <font>
+                                <Font name="Times New Roman" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="54.0" layoutY="28.0" text="100" textAlignment="CENTER">
+                            <font>
+                                <Font name="Times New Roman" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="457.0" layoutY="92.0" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: #c7d4f6; -fx-border-radius: 7; -fx-background-radius: 7;">
+                    <children>
+                        <Label layoutX="20.0" layoutY="5.0" text="Disponíveis">
+                            <font>
+                                <Font name="Times New Roman" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="38.0" layoutY="27.0" text="100" textAlignment="CENTER">
+                            <font>
+                                <Font name="Times New Roman" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="307.0" layoutY="176.0" prefHeight="49.0" prefWidth="131.0" style="-fx-background-color: #c7d4f6; -fx-border-radius: 5; -fx-background-radius: 7;">
+                    <children>
+                        <Label layoutX="35.0" layoutY="4.0" text="Empréstimos">
+                            <font>
+                                <Font name="Times New Roman" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="56.0" layoutY="27.0" text="100" textAlignment="CENTER">
+                            <font>
+                                <Font name="Times New Roman" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="457.0" layoutY="175.0" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: #c7d4f6; -fx-border-radius: 7; -fx-background-radius: 7;">
+                    <children>
+                        <Label layoutX="24.0" layoutY="4.0" text="Atrasados">
+                            <font>
+                                <Font name="Times New Roman" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="38.0" layoutY="27.0" text="100" textAlignment="CENTER">
+                            <font>
+                                <Font name="Times New Roman" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Label layoutX="85.0" layoutY="62.0" text="Novembro" />
+                <Label layoutX="87.0" layoutY="91.0" text="m">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="87.0" layoutY="148.0" text="02">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <Label layoutX="87.0" layoutY="174.0" text="09">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <Label layoutX="87.0" layoutY="202.0" text="16">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <Label layoutX="87.0" layoutY="231.0" text="23">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <Label layoutX="87.0" layoutY="264.0" text="30">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+            </children></Pane>
+        <Pane layoutX="38.0" layoutY="52.0" prefHeight="304.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
+         <children>
+            <Button layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/telaprincipal/casa.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="4.0" layoutY="99.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/telaprincipal/prateleiras-de-parede.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/telaprincipal/lendo-um-livro.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/telaprincipal/do-utilizador.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="4.0" layoutY="261.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/telaprincipal/opcao-de-sair.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+        </Pane>
+        <Label layoutX="138.0" layoutY="108.0" text="t">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Label layoutX="165.0" layoutY="108.0" text="w">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Label layoutX="197.0" layoutY="108.0" text="t">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Label layoutX="227.0" layoutY="109.0" text="f">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Label layoutX="254.0" layoutY="108.0" text="s">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Label layoutX="284.0" layoutY="108.0" text="s">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Label layoutX="135.0" layoutY="165.0" text="03">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="135.0" layoutY="194.0" text="10">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="135.0" layoutY="219.0" text="17">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="135.0" layoutY="248.0" text="24">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="163.0" layoutY="165.0" text="04">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="163.0" layoutY="194.0" text="11">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="163.0" layoutY="219.0" text="18">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="163.0" layoutY="248.0" text="25">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="193.0" layoutY="165.0" text="05">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="193.0" layoutY="194.0" text="12">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="193.0" layoutY="219.0" text="19">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="193.0" layoutY="248.0" text="26">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="223.0" layoutY="165.0" text="06">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="223.0" layoutY="194.0" text="13">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="223.0" layoutY="219.0" text="20">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="223.0" layoutY="249.0" text="27">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="251.0" layoutY="164.0" text="07">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="251.0" layoutY="193.0" text="14">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="251.0" layoutY="219.0" text="21">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="251.0" layoutY="249.0" text="28">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="281.0" layoutY="164.0" text="08">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="281.0" layoutY="192.0" text="15">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="281.0" layoutY="219.0" text="22">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="281.0" layoutY="249.0" text="29">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="281.0" layoutY="135.0" text="01">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Circle fill="#989ea4" layoutX="141.0" layoutY="256.0" opacity="0.22" radius="14.0" smooth="false" stroke="WHITE" strokeType="INSIDE" />
+      <Button layoutX="42.0" layoutY="110.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/telaprincipal/livro-de-capa-preta-fechado.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+    </children>
+</AnchorPane>

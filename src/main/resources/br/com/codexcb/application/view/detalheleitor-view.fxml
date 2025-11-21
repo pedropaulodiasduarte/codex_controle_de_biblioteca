@@ -31,14 +31,7 @@
                             </font>
                         </Label>
 
-                        <TextField fx:id="txtBuscarLeitor"
-                                   accessibleRole="TEXT_FIELD"
-                                   accessibleRoleDescription="Campo de texto para busca de clientes"
-                                   accessibleText="Digite o nome, código ou CPF do cliente para buscar"
-                                   accessibleHelp="Use o campo para localizar clientes rapidamente."
-                                   layoutX="109.0" layoutY="74.0" prefHeight="26.0" prefWidth="425.0"
-                                   promptText="Buscar por nome, código ou cpf"
-                                   style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
+                        <TextField fx:id="txtBuscarLeitor" accessibleHelp="Use o campo para localizar clientes rapidamente." accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto para busca de clientes" accessibleText="Digite o nome, código ou CPF do cliente para buscar" layoutX="109.0" layoutY="74.0" prefHeight="26.0" prefWidth="425.0" promptText="Buscar por nome, código ou cpf" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -284,12 +277,7 @@
                                                 <Font name="Times New Roman" size="16.0" />
                                             </font>
                                         </Text>
-                                        <TextField accessibleRole="TEXT_FIELD"
-                                                   accessibleRoleDescription="Campo de texto de status de empréstimo"
-                                                   accessibleText="Campo para mudar o status do livro"
-                                                   accessibleHelp="Use para alterar o status do empréstimo (Ex: Devolvido)"
-                                                   layoutX="180.0" layoutY="16.0" prefHeight="25.0" prefWidth="96.0"
-                                                   promptText="Status" />
+                                        <TextField accessibleHelp="Use para alterar o status do empréstimo (Ex: Devolvido)" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto de status de empréstimo" accessibleText="Campo para mudar o status do livro" layoutX="180.0" layoutY="16.0" prefHeight="25.0" prefWidth="96.0" promptText="Status" />
                                     </children>
                                 </Pane>
                                 <Pane layoutX="201.0" layoutY="129.0" prefHeight="57.0" prefWidth="292.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;">
@@ -304,12 +292,7 @@
                                                 <Font name="Times New Roman" size="16.0" />
                                             </font>
                                         </Text>
-                                        <TextField accessibleRole="TEXT_FIELD"
-                                                   accessibleRoleDescription="Campo de texto de status de empréstimo"
-                                                   accessibleText="Campo para mudar o status do livro"
-                                                   accessibleHelp="Use para alterar o status do empréstimo (Ex: Devolvido)"
-                                                   layoutX="180.0" layoutY="17.0" prefHeight="25.0" prefWidth="96.0"
-                                                   promptText="Status" />
+                                        <TextField accessibleHelp="Use para alterar o status do empréstimo (Ex: Devolvido)" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto de status de empréstimo" accessibleText="Campo para mudar o status do livro" layoutX="180.0" layoutY="17.0" prefHeight="25.0" prefWidth="96.0" promptText="Status" />
                                     </children>
                                 </Pane>
                                 <Pane layoutX="201.0" layoutY="207.0" prefHeight="57.0" prefWidth="292.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;">
@@ -324,12 +307,7 @@
                                                 <Font name="Times New Roman" size="16.0" />
                                             </font>
                                         </Text>
-                                        <TextField accessibleRole="TEXT_FIELD"
-                                                   accessibleRoleDescription="Campo de texto de status de empréstimo"
-                                                   accessibleText="Campo para mudar o status do livro"
-                                                   accessibleHelp="Use para alterar o status do empréstimo (Ex: Devolvido)"
-                                                   layoutX="182.0" layoutY="16.0" prefHeight="25.0" prefWidth="96.0"
-                                                   promptText="Status" />
+                                        <TextField accessibleHelp="Use para alterar o status do empréstimo (Ex: Devolvido)" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto de status de empréstimo" accessibleText="Campo para mudar o status do livro" layoutX="182.0" layoutY="16.0" prefHeight="25.0" prefWidth="96.0" promptText="Status" />
                                     </children>
                                 </Pane>
                                 <Button fx:id="btnvoltar" layoutX="378.0" layoutY="274.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: blue;" text="Voltar">
@@ -351,41 +329,65 @@
                         </Pane>
                     </children>
                 </Pane>
-                <Pane layoutX="27.0" layoutY="60.0" prefHeight="304.0" prefWidth="48.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
-                    <children>
-                        <ImageView fitHeight="35.0" fitWidth="29.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../../../../../../../../../Downloads/casa.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="9.0" layoutY="64.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../../../../../../../../../Downloads/livro-de-capa-preta-fechado.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="10.0" layoutY="113.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../../../../../../../../../Downloads/lendo-um-livro.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="11.0" layoutY="159.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../../../../../../../../../Downloads/prateleiras-de-parede.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="10.0" layoutY="209.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../../../../../../../../../Downloads/do-utilizador.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="12.0" layoutY="268.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../../../../../../../../../Downloads/opcao-de-sair.png" />
-                            </image>
-                        </ImageView>
-                    </children>
-                </Pane>
             </children>
         </Pane>
+      <Pane layoutX="25.0" layoutY="29.0" prefHeight="338.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
+         <children>
+            <Button layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/detalheleitor/casa.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="4.0" layoutY="99.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/detalheleitor/prateleiras-de-parede.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/detalheleitor/lendo-um-livro.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/detalheleitor/do-utilizador.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="4.0" layoutY="282.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/detalheleitor/opcao-de-sair.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Button layoutX="29.0" layoutY="88.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/detalheleitor/livro-de-capa-preta-fechado.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>
