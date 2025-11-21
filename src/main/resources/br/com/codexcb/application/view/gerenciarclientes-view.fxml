@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+    <children>
+        <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c7d4f6;">
+         <children>
+            <Pane layoutX="13.0" layoutY="13.0" prefHeight="375.0" prefWidth="574.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-background-radius: 7; -fx-border-radius: 7;">
+               <children>
+                  <Label layoutX="85.0" layoutY="14.0" text="Gerenciamento de Clientes">
+                     <font>
+                        <Font name="Times New Roman Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="87.0" layoutY="42.0" text="Cadastre e gerencie os leitores da biblioteca">
+                     <font>
+                        <Font name="Times New Roman" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="88.0" layoutY="74.0" prefHeight="26.0" prefWidth="425.0" promptText="Buscar por nome, código ou cpf" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="454.0" layoutY="14.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="110.0" style="-fx-background-radius: 5; -fx-background-color: #2C8CFF;" text="+ Novo Cliente">
+                     <font>
+                        <Font name="Times New Roman" size="10.0" />
+                     </font></Button>
+                  <Pane layoutX="87.0" layoutY="122.0" prefHeight="241.0" prefWidth="470.0" style="-fx-background-color: #ebf0fc; -fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20;">
+                     <children>
+                        <Line endX="369.99993896484375" layoutX="100.0" layoutY="30.0" startX="-100.0" />
+                        <VBox layoutX="86.0" layoutY="-3.0" prefHeight="242.0" prefWidth="69.0">
+                           <children>
+                              <Label text="Código">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="15.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="1205">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="21.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Label>
+                              <Label text="1205">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="21.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="150.0" layoutY="-3.0" prefHeight="242.0" prefWidth="116.0">
+                           <children>
+                              <Label text="CPF">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="50.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="123.456.789-04">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="28.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Label>
+                              <Label text="123.456.789-04">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="28.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="255.0" layoutY="-3.0" prefHeight="242.0" prefWidth="86.0">
+                           <children>
+                              <Label text="Data Cadastro">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="15.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="12/05/2002">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="21.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Label>
+                              <Label text="12/05/2022">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="21.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="344.0" layoutY="-4.0" prefHeight="242.0" prefWidth="129.0">
+                           <children>
+                              <Label text="Empréstimos">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="45.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Total 3">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="62.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Total 3">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="62.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="4.0" layoutY="-2.0" prefHeight="242.0" prefWidth="86.0">
+                           <children>
+                              <Label text="Nome">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="17.0" left="15.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Hyperlink text="Chimby Roger">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </Hyperlink>
+                              <Hyperlink text="Chimby Roger">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="30.0" layoutY="34.0" prefHeight="338.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
+               <children>
+                  <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagem/gerenciarclientes/casa.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnGerenciaremprestimo" layoutX="5.0" layoutY="102.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagem/gerenciarclientes/prateleiras-de-parede.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnGerenciarclientes" layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagem/gerenciarclientes/lendo-um-livro.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnConfiguracoesusuario" layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagem/gerenciarclientes/do-utilizador.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnDeslogar" layoutX="4.0" layoutY="282.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagem/gerenciarclientes/opcao-de-sair.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnAcervo" layoutX="4.0" layoutY="61.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagem/gerenciarclientes/livro-de-capa-preta-fechado.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+        </Pane>
+    </children>
+</AnchorPane>

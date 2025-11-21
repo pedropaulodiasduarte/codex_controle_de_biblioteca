@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c7d4f6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.TelaPrincipalController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c7d4f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.TelaPrincipalController">
     <children>
         <Pane layoutX="19.0" layoutY="17.0" prefHeight="366.0" prefWidth="562.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 5; -fx-background-radius: 5;">
             <children>
@@ -25,7 +25,7 @@
                                 <Font name="Times New Roman" size="12.0" />
                             </font>
                         </Label>
-                        <Label layoutX="54.0" layoutY="28.0" text="100" textAlignment="CENTER">
+                        <Label fx:id="lbTotallivros" layoutX="54.0" layoutY="28.0" text="100" textAlignment="CENTER">
                             <font>
                                 <Font name="Times New Roman" size="14.0" />
                             </font>
@@ -39,7 +39,7 @@
                                 <Font name="Times New Roman" size="12.0" />
                             </font>
                         </Label>
-                        <Label layoutX="38.0" layoutY="27.0" text="100" textAlignment="CENTER">
+                        <Label fx:id="lbLivrosdisponiveis" layoutX="38.0" layoutY="27.0" text="70" textAlignment="CENTER">
                             <font>
                                 <Font name="Times New Roman" size="14.0" />
                             </font>
@@ -53,7 +53,7 @@
                                 <Font name="Times New Roman" size="12.0" />
                             </font>
                         </Label>
-                        <Label layoutX="56.0" layoutY="27.0" text="100" textAlignment="CENTER">
+                        <Label fx:id="lbTotalemprestimos" layoutX="56.0" layoutY="27.0" text="14" textAlignment="CENTER">
                             <font>
                                 <Font name="Times New Roman" size="14.0" />
                             </font>
@@ -67,7 +67,7 @@
                                 <Font name="Times New Roman" size="12.0" />
                             </font>
                         </Label>
-                        <Label layoutX="38.0" layoutY="27.0" text="100" textAlignment="CENTER">
+                        <Label fx:id="lbTotalatrasados" layoutX="38.0" layoutY="27.0" text="16" textAlignment="CENTER">
                             <font>
                                 <Font name="Times New Roman" size="14.0" />
                             </font>
