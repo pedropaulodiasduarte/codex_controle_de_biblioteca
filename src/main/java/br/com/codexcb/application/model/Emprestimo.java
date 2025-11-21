@@ -17,4 +17,48 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
         this.status = status;
     }
+
+    public String getIsbnCodigo() {
+        return isbnCodigo;
+    }
+
+    public void setIsbnCodigo(String isbnCodigo) {
+        this.isbnCodigo = isbnCodigo;
+    }
+
+    public int getIdLeitor() {
+        return idLeitor;
+    }
+
+    public void setIdLeitor(int idLeitor) {
+        this.idLeitor = idLeitor;
+    }
+
+    public LocalDate getDataEmprestimo() {
+        return dataEmprestimo;
+    }
+
+    public void setDataEmprestimo(LocalDate dataEmprestimo) {
+        this.dataEmprestimo = dataEmprestimo;
+    }
+
+    public LocalDate getDataDevolucao() {
+        return dataDevolucao;
+    }
+
+    public void setDataDevolucao(LocalDate dataDevolucao) {
+        this.dataDevolucao = dataDevolucao;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getId() {
+        return id;
+    }
 }

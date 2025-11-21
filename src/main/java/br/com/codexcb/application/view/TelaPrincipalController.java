@@ -15,7 +15,7 @@ public class TelaPrincipalController {
     @FXML
     private void abrirCadastroCliente(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("cadastrarlivro-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("redefinirsenha-view.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

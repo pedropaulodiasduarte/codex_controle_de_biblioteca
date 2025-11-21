@@ -1,14 +1,15 @@
 package br.com.codexcb.application.model;
 
 public class Usuario {
-    private int id;
+    private Integer id;
     private String nome;
     private String cpf;
     private String endereco;
     private String telefone;
     private String email;
 
-    public Usuario (String nome, String cpf, String endereco, String telefone, String email) {
+    public Usuario(Integer id, String nome, String cpf, String endereco, String telefone, String email) {
+        this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -48,7 +49,7 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -66,7 +66,7 @@ public class CadastrarLeitorController {
         String telefone = telefoneField.getText();
         String email = emailfield.getText();
 
-        Usuario leitor = new Usuario(nome, cpf, endereco, telefone, email);
+        Usuario leitor = new Usuario(null, nome, cpf, endereco, telefone, email);
         return leitor;
     }
 

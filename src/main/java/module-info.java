@@ -11,6 +11,7 @@ module br.com.codexcb.application {
     requires javafx.base;
 
 
+
     exports br.com.codexcb.application;
 
     opens br.com.codexcb.application to javafx.fxml;
