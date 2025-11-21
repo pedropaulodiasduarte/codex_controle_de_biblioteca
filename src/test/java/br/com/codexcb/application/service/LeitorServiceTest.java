@@ -7,9 +7,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import static org.junit.jupiter.api.Assertions.*;
+
 class LeitorServiceTest {
     private  LeitorService leitorService;
     private LeitorRepository leitorRepository;
+
     @BeforeEach
     void setup(){
         leitorService = new LeitorService(new LeitorDAO());
@@ -26,6 +31,22 @@ class LeitorServiceTest {
         System.out.println("Endereço "+leitor.getEndereco());
         System.out.println("Telefone "+leitor.getTelefone());
         System.out.println("email "+leitor.getEmail());
+    }
+
+    @Test
+    @DisplayName("teste de recuperação de todos usuários cadastrados do banco em uma arraylist")
+    void consultarListaLeitor(){
+        List<Usuario> leitores = leitorRepository.consultarListaUsuario();
+        assertNotEquals(0, leitores.size());
+        for (int i = 0; i < leitores.size(); i++) {
+            System.out.println("ID "+leitores.get(i).getId());
+            System.out.println("Nome "+leitores.get(i).getNome());
+            System.out.println("CPF "+leitores.get(i).getCpf());
+            System.out.println("Endereço "+leitores.get(i).getEndereco());
+            System.out.println("Telefone "+leitores.get(i).getTelefone());
+            System.out.println("email "+leitores.get(i).getEmail());
+        }
+
     }
 
 }

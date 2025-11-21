@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.time.LocalDate;
 
 public class LivroDAO implements LivroRepository{
     @Override
@@ -38,4 +39,39 @@ public class LivroDAO implements LivroRepository{
         }
         return false;
     }
+
+    @Override
+    public Livro consultarLivroIsbnCodigo(String isbnCodigo) {
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        String sqlScript = "select * from livro where isbncodigo = ?";
+
+        try (Connection connection = conectaDatabase.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sqlScript)) {
+
+            preparedStatement.setString(1, isbnCodigo);
+
+            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()){
+                //ResultSet é uma interface, o qual mediante seu objeto se pode iterar sobre os dados da consulta
+                if (resultSet.next()) {
+                    Integer id = resultSet.getInt("id");
+                    String titulo = resultSet.getString("titulo");
+                    String autor = resultSet.getString("autor");
+                    String isbnCodigoRecuperado = resultSet.getString("isbnCodigo");
+                    String idioma = resultSet.getString("idioma");
+                    String editora = resultSet.getString("editora");
+                    LocalDate dataPublicacao = LocalDate.parse("2025-10-10");
+                    int copia = resultSet.getInt("copia");
+                    String genero = resultSet.getString("genero");
+                    int idLocalizacao = resultSet.getInt("idLocalizacao");
+
+                    return new Livro(id,titulo, autor, isbnCodigoRecuperado, idioma, editora, dataPublicacao, copia, idLocalizacao, genero);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Erro de banco de dados: " + e.getMessage());
+        }
+        return null;
+    }
+
 }

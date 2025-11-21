@@ -53,13 +53,13 @@ preparedStatement.setInt(1, id);
             try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()){
                 //ResultSet é uma interface, o qual mediante seu objeto se pode iterar sobre os dados da consulta
                 if (resultSet.next()) {
-                    id = resultSet.getInt("id");
+                    int idRecuperado = resultSet.getInt("id");
                     String nome = resultSet.getString("nome");
                     String cpf = resultSet.getString("cpf");
                     String endereco = resultSet.getString("endereco");
                     String telefone = resultSet.getString("telefone");
                     String email = resultSet.getString("email");
-                    return new Usuario(id, nome, cpf, endereco, telefone, email);
+                    return new Usuario(idRecuperado, nome, cpf, endereco, telefone, email);
                 }
             }
         } catch (SQLException e) {
@@ -72,7 +72,7 @@ preparedStatement.setInt(1, id);
     @Override
     public List<Usuario> consultarListaUsuario() {
         ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
-        String sqlScript = "select * from leitor where id = ?";
+        String sqlScript = "select * from leitor";
         List<Usuario> leitores = new ArrayList<>();
 
         try (Connection connection = conectaDatabase.getConnection();

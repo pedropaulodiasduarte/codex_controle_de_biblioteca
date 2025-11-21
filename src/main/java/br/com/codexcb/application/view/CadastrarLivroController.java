@@ -107,7 +107,7 @@ public class CadastrarLivroController {
         String genero = cmbGenero.getValue();
         LocalDate dataPublicacao  = dtpDataPublicacao.getValue();
 
-        Livro livro = new Livro(titulo, autor, isbnCodigo, idioma, editora, dataPublicacao, copia, idLocalizacao, genero);
+        Livro livro = new Livro(null, titulo, autor, isbnCodigo, idioma, editora, dataPublicacao, copia, idLocalizacao, genero);
         return livro;
     }
 

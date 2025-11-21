@@ -3,7 +3,7 @@ package br.com.codexcb.application.model;
 import java.time.LocalDate;
 
 public class Livro {
-    private int id;
+    private Integer id;
     private String titulo;
     private String autor;
     private String isbnCodigo;
@@ -15,7 +15,8 @@ public class Livro {
     private String genero;
 
     //construtor
-    public Livro(String titulo, String autor, String isbnCodigo, String idioma, String editora, LocalDate dataPublicacao, int copia, int idLocalizacao, String genero) {
+    public Livro(Integer id, String titulo, String autor, String isbnCodigo, String idioma, String editora, LocalDate dataPublicacao, int copia, int idLocalizacao, String genero) {
+        this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.isbnCodigo = isbnCodigo;
@@ -28,7 +29,7 @@ public class Livro {
     }
 
     //getters and setters
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
