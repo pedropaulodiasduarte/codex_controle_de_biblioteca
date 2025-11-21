@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="596.0" style="-fx-background-color: c4d4f4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.CadastrarLeitorController">
+<AnchorPane prefHeight="400.0" prefWidth="596.0" style="-fx-background-color: c4d4f4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.CadastrarLeitorController">
     <children>
         <Pane layoutX="14.0" layoutY="7.0" prefHeight="386.0" prefWidth="575.0" style="-fx-background-color: white; -fx-background-radius: 10;">
             <children>
@@ -75,7 +75,7 @@
             </children></Pane>
       <Pane layoutX="24.0" layoutY="34.0" prefHeight="338.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
          <children>
-            <Button layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -84,7 +84,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="4.0" layoutY="99.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnGerenciaremprestimo" layoutX="4.0" layoutY="99.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -93,7 +93,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnGerenciarclientes" layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -102,7 +102,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnConfiguracoesusuario" layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -111,7 +111,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="4.0" layoutY="282.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnDeslogar" layoutX="4.0" layoutY="282.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -120,7 +120,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="4.0" layoutY="61.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnAcervo" layoutX="4.0" layoutY="61.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
