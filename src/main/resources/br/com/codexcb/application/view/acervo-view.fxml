@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c7d4f6;">
+               <children>
+                  <Pane layoutX="13.0" layoutY="13.0" prefHeight="375.0" prefWidth="574.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-background-radius: 7; -fx-border-radius: 7;">
+                     <children>
+                        <Label layoutX="85.0" layoutY="14.0" text="Biblioteca - Acervo">
+                           <font>
+                              <Font name="Times New Roman Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="85.0" layoutY="42.0" text="Gerencie o acervo completo da biblioteca">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="90.0" layoutY="74.0" prefHeight="31.0" prefWidth="470.0" promptText="Buscar por título, autor, gênero, ano de publicação ..." style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btncadastrarlivro" layoutX="454.0" layoutY="14.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="110.0" style="-fx-background-radius: 5; -fx-background-color: #2C8CFF;" text="+ Adicionar livro">
+                           <font>
+                              <Font name="Times New Roman" size="11.0" />
+                           </font>
+                        </Button>
+                        <Pane layoutX="87.0" layoutY="122.0" prefHeight="241.0" prefWidth="470.0" style="-fx-background-color: #ebf0fc; -fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20;">
+                           <children>
+                              <VBox layoutX="13.0" layoutY="-12.0" prefHeight="254.0" prefWidth="111.0">
+                                 <children>
+                                    <ImageView fitHeight="110.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagem/acervo/livroteste.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label text="Mariana">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="11.0" prefWidth="73.0" text="Bailey Dupond">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <ImageView fitHeight="84.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagem/acervo/livroteste.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label text="Mariana">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="11.0" prefWidth="73.0" text="Bailey Dupond">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <effect>
+                                    <DropShadow blurType="GAUSSIAN" height="18.0" offsetY="3.0" radius="8.5" width="18.0">
+                                       <color>
+                                          <Color opacity="0.1489362120628357" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </VBox>
+                              <VBox layoutX="126.0" layoutY="-12.0" prefHeight="254.0" prefWidth="111.0">
+                                 <children>
+                                    <ImageView fitHeight="110.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagem/acervo/livroteste.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label text="Mariana">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="11.0" prefWidth="73.0" text="Bailey Dupond">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <ImageView fitHeight="84.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagem/acervo/livroteste.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label text="Mariana">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="11.0" prefWidth="73.0" text="Bailey Dupond">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <effect>
+                                    <DropShadow blurType="GAUSSIAN" height="18.0" offsetY="3.0" radius="8.5" width="18.0">
+                                       <color>
+                                          <Color opacity="0.1489362120628357" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </VBox>
+                              <VBox layoutX="245.0" layoutY="-12.0" prefHeight="254.0" prefWidth="111.0">
+                                 <children>
+                                    <ImageView fitHeight="110.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagem/acervo/livroteste.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label text="Mariana">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="11.0" prefWidth="73.0" text="Bailey Dupond">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <ImageView fitHeight="84.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagem/acervo/livroteste.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label text="Mariana">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="11.0" prefWidth="73.0" text="Bailey Dupond">
+                                       <font>
+                                          <Font name="Times New Roman" size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <effect>
+                                    <DropShadow blurType="GAUSSIAN" height="18.0" offsetY="3.0" radius="8.5" width="18.0">
+                                       <color>
+                                          <Color opacity="0.1489362120628357" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <VBox layoutX="444.0" layoutY="111.0" prefHeight="254.0" prefWidth="111.0">
+                           <children>
+                              <ImageView fitHeight="110.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imagem/acervo/livroteste.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label text="Mariana">
+                                 <font>
+                                    <Font name="Times New Roman" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="11.0" prefWidth="73.0" text="Bailey Dupond">
+                                 <font>
+                                    <Font name="Times New Roman" size="10.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ImageView fitHeight="84.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imagem/acervo/livroteste.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label text="Mariana">
+                                 <font>
+                                    <Font name="Times New Roman" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="11.0" prefWidth="73.0" text="Bailey Dupond">
+                                 <font>
+                                    <Font name="Times New Roman" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="18.0" offsetY="3.0" radius="8.5" width="18.0">
+                                 <color>
+                                    <Color opacity="0.1489362120628357" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="29.0" layoutY="35.0" prefHeight="338.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
+                     <children>
+                        <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imagem/acervo/casa.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnGerenciaremprestimo" layoutX="5.0" layoutY="102.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imagem/acervo/prateleiras-de-parede.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnGerenciarclientes" layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imagem/acervo/lendo-um-livro.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnConfiguracoesusuario" layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imagem/acervo/do-utilizador.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnDeslogar" layoutX="4.0" layoutY="282.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imagem/acervo/opcao-de-sair.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnAcervo" layoutX="4.0" layoutY="61.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imagem/acervo/livro-de-capa-preta-fechado.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c7d4f6;">
+         <children>
+            <Pane layoutX="304.0" layoutY="26.0" prefHeight="350.0" prefWidth="274.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-width: 3; -fx-border-color: black; -fx-border-radius: 5;">
+               <children>
+                  <Label layoutX="50.0" layoutY="26.0" prefHeight="30.0" prefWidth="174.0" text="Acesso ao Sistema">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="66.0" layoutY="56.0" text="Entre com suas credenciais" />
+                  <TextField layoutX="23.0" layoutY="121.0" prefHeight="25.0" prefWidth="231.0" />
+                  <TextField layoutX="23.0" layoutY="175.0" prefHeight="25.0" prefWidth="231.0" />
+                  <Label layoutX="23.0" layoutY="101.0" text="Email" />
+                  <Label layoutX="23.0" layoutY="152.0" text="Senha" />
+                  <Hyperlink fx:id="btnredefinirsenha" layoutX="152.0" layoutY="211.0" text="Esqueceu a senha?" />
+                  <Hyperlink fx:id="btncadastrarbiblioteca" layoutX="187.0" layoutY="246.0" text="Cadastre-se" />
+                  <Button fx:id="btnmenuinicial" layoutX="36.0" layoutY="300.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: #1467C7;" text="Entrar" textFill="WHITE" />
+               </children>
+            </Pane>
+            <ImageView fitHeight="120.0" fitWidth="127.0" layoutX="81.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/acessoapp/imagem_Home.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="53.0" layoutY="185.0" text="Codex">
+               <font>
+                  <Font name="Times New Roman Bold" size="66.0" />
+               </font>
+            </Label>
+            <Label layoutX="50.0" layoutY="259.0" text="Controle de Estoque de Biblioteca">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
