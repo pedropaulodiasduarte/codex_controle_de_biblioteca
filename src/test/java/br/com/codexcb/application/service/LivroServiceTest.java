@@ -1,6 +1,7 @@
 package br.com.codexcb.application.service;
 
 import br.com.codexcb.application.dao.LivroDAO;
+import br.com.codexcb.application.dao.LivroRepository;
 import br.com.codexcb.application.model.Livro;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,11 +14,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class LivroServiceTest {
     private LivroService livroService;
     private LivroDAO livroDAO;
+    private LivroRepository livroRepository;
 
     @BeforeEach
     void setup(){
         livroDAO = new LivroDAO();
         livroService = new LivroService(livroDAO);
+        livroRepository = new LivroDAO();
     }
 
     @Test
@@ -33,9 +36,29 @@ class LivroServiceTest {
         int idLocalizacao = 1;
         String genero = "romance";
 
-        Livro livro = new Livro(titulo, autor, isbnCodigo, idioma, editora, dataPublicacao, copia, idLocalizacao, genero);
+        Livro livro = new Livro(null, titulo, autor, isbnCodigo, idioma, editora, dataPublicacao, copia, idLocalizacao, genero);
         assertEquals(10, livro.getCopia());
  livroService.cadastrarLivro(livro);
+    }
+
+    @Test
+    @DisplayName("teste de consulta de livro com argumento de isbn")
+    void consultarLivroIsbnCodigo() {
+        Livro livro = livroRepository.consultarLivroIsbnCodigo("4639456716386");
+        assertNotEquals(null, livro);
+        System.out.println("ID | Título | Autor | ISBN | Idioma | Editora | Data Publicação | Cópia | Gênero | ID Localização");
+        System.out.printf("%d | %s | %s | %s | %s | %s | %s | %d | %s | %d%n",
+                livro.getId(),
+                livro.getTitulo(),
+                livro.getAutor(),
+                livro.getIsbnCodigo(),
+                livro.getIdioma(),
+                livro.getEditora(),
+                livro.getDataPublicacao(),
+                livro.getCopia(),
+                livro.getGenero(),
+                livro.getIdLocalizacao());
+
     }
 
 }

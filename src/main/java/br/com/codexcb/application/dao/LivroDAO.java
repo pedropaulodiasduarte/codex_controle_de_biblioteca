@@ -59,7 +59,8 @@ public class LivroDAO implements LivroRepository{
                     String isbnCodigoRecuperado = resultSet.getString("isbnCodigo");
                     String idioma = resultSet.getString("idioma");
                     String editora = resultSet.getString("editora");
-                    LocalDate dataPublicacao = LocalDate.parse("2025-10-10");
+                    java.sql.Date sqlDate = resultSet.getDate("dataPublicacao");
+                    LocalDate dataPublicacao = sqlDate.toLocalDate();
                     int copia = resultSet.getInt("copia");
                     String genero = resultSet.getString("genero");
                     int idLocalizacao = resultSet.getInt("idLocalizacao");
