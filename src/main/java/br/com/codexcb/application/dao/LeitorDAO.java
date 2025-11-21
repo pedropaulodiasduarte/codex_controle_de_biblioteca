@@ -97,4 +97,33 @@ preparedStatement.setInt(1, id);
         }
         return leitores;
     }
+
+    @Override
+    public Usuario consultarLeitorCPF(String cpf) {
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        String sqlScript = "select * from leitor where cpf = ?";
+
+        try (Connection connection = conectaDatabase.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sqlScript)) {
+
+            preparedStatement.setString(1, cpf);
+
+            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()){
+                //ResultSet é uma interface, o qual mediante seu objeto se pode iterar sobre os dados da consulta
+                if (resultSet.next()) {
+                    int idRecuperado = resultSet.getInt("id");
+                    String nome = resultSet.getString("nome");
+                    String cpfRecuperado = resultSet.getString("cpf");
+                    String endereco = resultSet.getString("endereco");
+                    String telefone = resultSet.getString("telefone");
+                    String email = resultSet.getString("email");
+                    return new Usuario(idRecuperado, nome, cpfRecuperado, endereco, telefone, email);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Erro de banco de dados: " + e.getMessage());
+        }
+        return null;
+    }
 }

@@ -24,7 +24,7 @@ class LeitorServiceTest {
     @Test
     @DisplayName("teste de consulta de usuário por id")
     void consultarLeitorId() {
-        Usuario leitor = leitorRepository.consultarLeitorId(2);
+        Usuario leitor = leitorService.consultarLeitorId(2);
         System.out.println("ID "+leitor.getId());
         System.out.println("Nome "+leitor.getNome());
         System.out.println("CPF "+leitor.getCpf());
@@ -36,7 +36,7 @@ class LeitorServiceTest {
     @Test
     @DisplayName("teste de recuperação de todos usuários cadastrados do banco em uma arraylist")
     void consultarListaLeitor(){
-        List<Usuario> leitores = leitorRepository.consultarListaUsuario();
+        List<Usuario> leitores = leitorService.consultarListaUsuario();
         assertNotEquals(0, leitores.size());
         for (int i = 0; i < leitores.size(); i++) {
             System.out.println("ID "+leitores.get(i).getId());
@@ -48,5 +48,19 @@ class LeitorServiceTest {
         }
 
     }
+
+    @Test
+    @DisplayName("Teste de consulta por cpf")
+    void consultarLeitorCpf() {
+        Usuario leitor = leitorService.consultarLeitorCPF("01658039408");
+        assertNotEquals(null, leitor);
+        System.out.println("ID "+leitor.getId());
+        System.out.println("Nome "+leitor.getNome());
+        System.out.println("CPF "+leitor.getCpf());
+        System.out.println("Endereço "+leitor.getEndereco());
+        System.out.println("Telefone "+leitor.getTelefone());
+        System.out.println("email "+leitor.getEmail());
+    }
+
 
 }

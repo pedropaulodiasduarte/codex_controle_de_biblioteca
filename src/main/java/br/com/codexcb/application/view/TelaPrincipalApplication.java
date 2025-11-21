@@ -13,7 +13,7 @@ public class TelaPrincipalApplication extends Application {
     public void start(Stage stage) throws IOException {
 
         // Carrega a tela principal
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("telaprincipal-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cadastrarlivro-view.fxml"));
 
         // Define o tamanho inicial da janela
         Scene scene = new Scene(fxmlLoader.load(), 700, 540);
