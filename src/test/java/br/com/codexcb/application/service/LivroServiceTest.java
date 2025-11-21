@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -59,6 +60,27 @@ class LivroServiceTest {
                 livro.getGenero(),
                 livro.getIdLocalizacao());
 
+    }
+
+    @Test
+    @DisplayName("teste de recuperação de dados, onde retorna todos livros cadastrados no banco de dados")
+    void consultarListaLivro() {
+        List<Livro> livros = livroRepository.consultarListaLivro();
+        assertNotEquals(0, livros.size());
+        System.out.println("ID | Título | Autor | ISBN | Idioma | Editora | Data Publicação | Cópia | Gênero | ID Localização");
+        for (int i = 0; i < livros.size(); i++) {
+            System.out.printf("%d | %s | %s | %s | %s | %s | %s | %d | %s | %d%n",
+                    livros.get(i).getId(),
+                    livros.get(i).getTitulo(),
+                    livros.get(i).getAutor(),
+                    livros.get(i).getIsbnCodigo(),
+                    livros.get(i).getIdioma(),
+                    livros.get(i).getEditora(),
+                    livros.get(i).getDataPublicacao(),
+                    livros.get(i).getCopia(),
+                    livros.get(i).getGenero(),
+                    livros.get(i).getIdLocalizacao());
+        }
     }
 
 }

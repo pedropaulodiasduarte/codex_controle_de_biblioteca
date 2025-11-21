@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LivroDAO implements LivroRepository{
     @Override
@@ -73,6 +75,40 @@ public class LivroDAO implements LivroRepository{
             System.out.println("Erro de banco de dados: " + e.getMessage());
         }
         return null;
+    }
+
+    @Override
+    public List<Livro> consultarListaLivro() {
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        String sqlScript = "select * from livro";
+        List<Livro> livros = new ArrayList<>();
+
+        try (Connection connection = conectaDatabase.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sqlScript);
+             java.sql.ResultSet resultSet = preparedStatement.executeQuery()) {
+            //ResultSet é uma interface, o qual mediante seu objeto se pode iterar sobre os dados da consulta
+
+            //laço de repetição para  Iterar sobre cada linha retornada pelo banco
+            while (resultSet.next()) {
+                Integer id = resultSet.getInt("id");
+                String titulo = resultSet.getString("titulo");
+                String autor = resultSet.getString("autor");
+                String isbnCodigoRecuperado = resultSet.getString("isbnCodigo");
+                String idioma = resultSet.getString("idioma");
+                String editora = resultSet.getString("editora");
+                java.sql.Date sqlDate = resultSet.getDate("dataPublicacao");
+                LocalDate dataPublicacao = sqlDate.toLocalDate();
+                int copia = resultSet.getInt("copia");
+                String genero = resultSet.getString("genero");
+                int idLocalizacao = resultSet.getInt("idLocalizacao");
+                Livro livro = new Livro(id,titulo, autor, isbnCodigoRecuperado, idioma, editora, dataPublicacao, copia, idLocalizacao, genero);
+                livros.add(livro);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Erro de banco de dados: " + e.getMessage());
+        }
+        return livros;
     }
 
 }
