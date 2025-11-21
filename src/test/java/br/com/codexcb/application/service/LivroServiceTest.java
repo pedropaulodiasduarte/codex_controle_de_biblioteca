@@ -45,7 +45,7 @@ class LivroServiceTest {
     @Test
     @DisplayName("teste de consulta de livro com argumento de isbn")
     void consultarLivroIsbnCodigo() {
-        Livro livro = livroRepository.consultarLivroIsbnCodigo("4639456716386");
+        Livro livro = livroService.consultarLivroIsbnCodigo("9788574480615");
         assertNotEquals(null, livro);
         System.out.println("ID | Título | Autor | ISBN | Idioma | Editora | Data Publicação | Cópia | Gênero | ID Localização");
         System.out.printf("%d | %s | %s | %s | %s | %s | %s | %d | %s | %d%n",
@@ -65,7 +65,7 @@ class LivroServiceTest {
     @Test
     @DisplayName("teste de recuperação de dados, onde retorna todos livros cadastrados no banco de dados")
     void consultarListaLivro() {
-        List<Livro> livros = livroRepository.consultarListaLivro();
+        List<Livro> livros = livroService.consultarListaLivro();
         assertNotEquals(0, livros.size());
         System.out.println("ID | Título | Autor | ISBN | Idioma | Editora | Data Publicação | Cópia | Gênero | ID Localização");
         for (int i = 0; i < livros.size(); i++) {
