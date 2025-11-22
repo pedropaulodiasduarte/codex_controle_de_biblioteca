@@ -1,5 +1,6 @@
 package br.com.codexcb.application.dao;
 
+import br.com.codexcb.application.model.EmprestimoVisualizacao;
 import br.com.codexcb.application.model.Usuario;
 
 import java.sql.Connection;
@@ -126,4 +127,5 @@ preparedStatement.setInt(1, id);
         }
         return null;
     }
-}
+
+    }

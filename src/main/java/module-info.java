@@ -9,7 +9,7 @@ module br.com.codexcb.application {
     requires mysql.connector.j;
     requires javafx.graphics;
     requires javafx.base;
-
+    
 
 
     exports br.com.codexcb.application;
