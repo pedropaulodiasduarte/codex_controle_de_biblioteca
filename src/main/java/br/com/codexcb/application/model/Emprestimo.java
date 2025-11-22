@@ -5,17 +5,25 @@ import java.time.LocalDate;
 public class Emprestimo {
     private int id;
     private String isbnCodigo;
-    private int idLeitor;
+    private String cpfLeitor;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
     private String status;
 
-    public Emprestimo(String isbnCodigo, int idLeitor, LocalDate dataEmprestimo, LocalDate dataDevolucao, String status) {
+    public Emprestimo(String isbnCodigo, String cpfLeitor, LocalDate dataEmprestimo, LocalDate dataDevolucao, String status) {
         this.isbnCodigo = isbnCodigo;
-        this.idLeitor = idLeitor;
+        this.cpfLeitor = cpfLeitor;
         this.dataEmprestimo = dataEmprestimo;
         this.dataDevolucao = dataDevolucao;
         this.status = status;
+    }
+
+    public String getCpfLeitor() {
+        return cpfLeitor;
+    }
+
+    public void setCpfLeitor(String cpfLeitor) {
+        this.cpfLeitor = cpfLeitor;
     }
 
     public String getIsbnCodigo() {
@@ -24,14 +32,6 @@ public class Emprestimo {
 
     public void setIsbnCodigo(String isbnCodigo) {
         this.isbnCodigo = isbnCodigo;
-    }
-
-    public int getIdLeitor() {
-        return idLeitor;
-    }
-
-    public void setIdLeitor(int idLeitor) {
-        this.idLeitor = idLeitor;
     }
 
     public LocalDate getDataEmprestimo() {

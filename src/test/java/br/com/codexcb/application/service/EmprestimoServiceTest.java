@@ -22,11 +22,11 @@ class EmprestimoServiceTest {
     @DisplayName("teste de inserção de dados na tabela emprestimo")
     void registrarEmprestimo() {
         String isbnCodigo = "1";
-        int idLeitor = 1;
+        String cpfLeitor = "07062032751";
         LocalDate dataemprestimo = LocalDate.parse("2025-10-10");
         LocalDate dataDevolucao = LocalDate.parse("2025-11-10");
         String status = "Pendente";
-        Emprestimo emprestimo = new Emprestimo(isbnCodigo, idLeitor, dataemprestimo, dataDevolucao, status);
+        Emprestimo emprestimo = new Emprestimo(isbnCodigo, cpfLeitor, dataemprestimo, dataDevolucao, status);
         assertEquals(true, emprestimoRepository.registrarEmprestimo(emprestimo));
 
     }

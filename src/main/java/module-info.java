@@ -23,4 +23,6 @@ module br.com.codexcb.application {
     exports br.com.codexcb.application.view;
 
     opens br.com.codexcb.application.view to javafx.fxml;
+
+
 }

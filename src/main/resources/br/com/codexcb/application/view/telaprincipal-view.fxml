@@ -107,53 +107,53 @@
                 </Label>
             </children></Pane>
         <Pane layoutX="38.0" layoutY="52.0" prefHeight="304.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
-         <children>
-            <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagem/telaprincipal/casa.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnGerenciaremprestimo" layoutX="4.0" layoutY="99.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagem/telaprincipal/prateleiras-de-parede.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnGerenciarclientes" layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagem/telaprincipal/lendo-um-livro.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnConfiguracoesusuario" layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagem/telaprincipal/do-utilizador.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnDeslogar" layoutX="4.0" layoutY="261.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagem/telaprincipal/opcao-de-sair.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
+            <children>
+                <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@imagem/telaprincipal/casa.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnGerenciaremprestimo" layoutX="4.0" layoutY="99.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE" accessibleText="Gerenciar Empréstimo" >
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@imagem/telaprincipal/prateleiras-de-parede.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnGerenciarclientes" layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE" accessibleText="Gerenciar Clientes" onAction="#onClickBtnGerenciarClientes">
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@imagem/telaprincipal/lendo-um-livro.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnConfiguracoesusuario" layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@imagem/telaprincipal/do-utilizador.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnDeslogar" layoutX="4.0" layoutY="261.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@imagem/telaprincipal/opcao-de-sair.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
         </Pane>
         <Label layoutX="138.0" layoutY="108.0" text="t">
             <font>
@@ -305,14 +305,14 @@
             </font>
         </Label>
         <Circle fill="#989ea4" layoutX="141.0" layoutY="256.0" opacity="0.22" radius="14.0" smooth="false" stroke="WHITE" strokeType="INSIDE" />
-      <Button fx:id="btnAcervo" layoutX="42.0" layoutY="110.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-         <graphic>
-            <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@imagem/telaprincipal/livro-de-capa-preta-fechado.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+        <Button fx:id="btnAcervo" layoutX="42.0" layoutY="110.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE" onAction="#onClickBtnAcervo" accessibleText="Acervo">
+            <graphic>
+                <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imagem/telaprincipal/livro-de-capa-preta-fechado.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
     </children>
 </AnchorPane>

@@ -18,7 +18,7 @@ public class EmprestimoDAO implements EmprestimoRepository{
 
             preparedStatement.setNull(1, Types.INTEGER);
             preparedStatement.setString(2, emprestimo.getIsbnCodigo());
-            preparedStatement.setInt(3, emprestimo.getIdLeitor());
+            preparedStatement.setString(3, emprestimo.getCpfLeitor());
             preparedStatement.setDate(4, java.sql.Date.valueOf(emprestimo.getDataEmprestimo()));
             preparedStatement.setDate(5, java.sql.Date.valueOf(emprestimo.getDataDevolucao()));
             preparedStatement.setString(6, emprestimo.getStatus());
