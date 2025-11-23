@@ -74,4 +74,63 @@ public class EmprestimoDAO implements EmprestimoRepository{
 
     }
 
+    public EmprestimoVisualizacao consultarEmprestimoStatus(Integer idConsultar, String statusConsultar){
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        String sqlScript = "select emprestimo.id, livro.titulo, leitor.nome, emprestimo.dataemprestimo, emprestimo.datadevolucao, emprestimo.status from emprestimo inner join leitor on emprestimo.cpffk = leitor.cpf inner join livro on emprestimo.isbncodigofk = livro.isbncodigo where emprestimo.id = ? and emprestimo.status = ?";
+
+        try (Connection connection = conectaDatabase.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sqlScript)) {
+            //ResultSet é uma interface, o qual mediante seu objeto se pode iterar sobre os dados da consulta
+            //java.sql.ResultSet resultSet = preparedStatement.executeQuery()
+
+            preparedStatement.setInt(1, idConsultar);
+            preparedStatement.setString(2, statusConsultar);
+
+
+            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()){
+                if (resultSet.next()) {
+                    Integer id = resultSet.getInt("id");
+                    String titulo = resultSet.getString("titulo");
+                    String nome = resultSet.getString("nome");
+                    java.sql.Date sqlDate = resultSet.getDate("dataemprestimo");
+                    LocalDate dataEmprestimo = sqlDate.toLocalDate();
+                    sqlDate = resultSet.getDate("dataDevolucao");
+                    LocalDate dataDevolucao = sqlDate.toLocalDate();
+                    String status = resultSet.getString("status");
+                    return new EmprestimoVisualizacao(id, titulo, nome, dataEmprestimo, dataDevolucao, status);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Erro de banco de dados: " + e.getMessage());
+        }
+        return null;
+
+
+    }
+
+    @Override
+    public boolean atualizarEmprestimo(Integer idAtualizar, String statusAtualizar, String statusAtual){
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        String sqlScript = "update emprestimo set status = ? where id = ? and status = ?";
+
+        try (Connection connection = conectaDatabase.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sqlScript)) {
+
+            preparedStatement.setString(1, statusAtualizar);
+            preparedStatement.setInt(2, idAtualizar);
+            preparedStatement.setString(3, statusAtual);
+
+            int linhasAfetadas = preparedStatement.executeUpdate();
+
+            if (linhasAfetadas > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Erro de banco de dados: " + e.getMessage());
+        }
+        return false;
+
+    }
 }

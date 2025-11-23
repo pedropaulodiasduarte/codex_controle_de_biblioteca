@@ -3,17 +3,26 @@ package br.com.codexcb.application.view;
 import br.com.codexcb.application.dao.EmprestimoDAO;
 import br.com.codexcb.application.model.EmprestimoVisualizacao;
 import br.com.codexcb.application.service.EmprestimoService;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class GerenciarEmprestimoController {
     @FXML private TableView<EmprestimoVisualizacao> tbEmprestimo;
+    @FXML private TableColumn<EmprestimoVisualizacao, Integer> clIdEmprestimo;
     @FXML private TableColumn<EmprestimoVisualizacao, String> clTitulo;
     @FXML private TableColumn<EmprestimoVisualizacao, String> clNome;
     @FXML TableColumn<EmprestimoVisualizacao, String> clDataEmprestimo;
@@ -23,13 +32,32 @@ public class GerenciarEmprestimoController {
     @FXML
     private void initialize() {
         //vinculando (biding) as colunas da tabela com a classe que irá popular a tabela
-        clTitulo.setCellValueFactory(new PropertyValueFactory<>("titulo"));
-        clNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        clIdEmprestimo.setCellValueFactory(new PropertyValueFactory<>("id"));
+        clTitulo.setCellValueFactory(new PropertyValueFactory<>("tituloLivro"));
+        clNome.setCellValueFactory(new PropertyValueFactory<>("nomeLeitor"));
         clDataEmprestimo.setCellValueFactory(new PropertyValueFactory<>("dataEmprestimo"));
-        clStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         clDataDevolucao.setCellValueFactory(new PropertyValueFactory<>("dataDevolucao"));
+        clStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         carregaListaEmprestimo();
     }
+
+    @FXML
+    private void onClickBtnMenuInicial(ActionEvent event) {
+        alternaTela(event, "telaprincipal-view.fxml", "Tela Inicial");
+    }
+
+    @FXML
+    private void onClickBtnCadastrarEmprestimo(ActionEvent event){
+        alternaTela(event, "cadastraremprestimo-view.fxml", "Cadastrar Empréstimo");
+    }
+
+    @FXML
+    private void onClickBtnAprovarEntrega(ActionEvent event) {
+        //TableView.TableViewSelectionModel<EmprestimoVisualizacao> selectionModel = tbEmprestimo.getSelectionModel();
+        //EmprestimoVisualizacao emprestimoSelecionado = selectionModel.getSelectedItem();
+
+    }
+
 
     private void carregaListaEmprestimo() {
         try {
@@ -41,5 +69,20 @@ public class GerenciarEmprestimoController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-            }
-}
+    }
+
+
+    private void alternaTela(ActionEvent event, String nomeArquivo, String tituloJanela) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(nomeArquivo));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle(tituloJanela);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Erro ao carregar a tela de cadastro de cliente.");
+        }
+    }
+    }

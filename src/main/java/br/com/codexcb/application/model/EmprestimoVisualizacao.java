@@ -3,14 +3,14 @@ package br.com.codexcb.application.model;
 import java.time.LocalDate;
 
 public class EmprestimoVisualizacao {
-    private int id;
+    private Integer id;
     private String tituloLivro;
     private String nomeLeitor;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
     private String status;
 
-    public EmprestimoVisualizacao(int id, String tituloLivro, String nomeLeitor, LocalDate dataEmprestimo, LocalDate dataDevolucao, String status) {
+    public EmprestimoVisualizacao(Integer id, String tituloLivro, String nomeLeitor, LocalDate dataEmprestimo, LocalDate dataDevolucao, String status) {
         this.id = id;
         this.tituloLivro = tituloLivro;
         this.nomeLeitor = nomeLeitor;
@@ -19,7 +19,7 @@ public class EmprestimoVisualizacao {
         this.status = status;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

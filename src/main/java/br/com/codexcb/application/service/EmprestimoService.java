@@ -22,4 +22,12 @@ public class EmprestimoService {
     public List<EmprestimoVisualizacao> consultarListaEmprestimo() {
 return         this.emprestimoRepository.consultarListaEmprestimo();
     }
+
+    public EmprestimoVisualizacao consultarEmprestimoStatus(Integer idConsultar, String statusConsultar) {
+        return this.emprestimoRepository.consultarEmprestimoStatus(idConsultar, statusConsultar);
+    }
+
+    public boolean atualizarEmprestimo(Integer idAtualizar, String statusAtualizar, String statusAtual) {
+        return this.emprestimoRepository.atualizarEmprestimo(idAtualizar, statusAtualizar, statusAtual);
+    }
 }

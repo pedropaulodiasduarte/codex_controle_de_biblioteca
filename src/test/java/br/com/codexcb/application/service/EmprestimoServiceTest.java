@@ -46,4 +46,19 @@ class EmprestimoServiceTest {
         }
     }
 
+    @Test
+    @DisplayName("teste de consulta por id e status de empréstimo")
+    void consultarEmprestimoStatus(){
+        EmprestimoVisualizacao emprestimoVisualizacao = emprestimoService.consultarEmprestimoStatus(4, "Pendente");
+        assertNotEquals(null, emprestimoVisualizacao);
+        System.out.println(emprestimoVisualizacao.getId());
+        System.out.println(emprestimoVisualizacao.getStatus());
+    }
+
+    @Test
+    @DisplayName("update de empréstimo")
+    void ataualizarEmprestimo(){
+        assertEquals(true, emprestimoService.atualizarEmprestimo(1, "em atraso", "Devolvido"));
+    }
+
 }

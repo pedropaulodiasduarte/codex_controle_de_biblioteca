@@ -8,5 +8,7 @@ import java.util.List;
 
 public interface EmprestimoRepository {
     boolean registrarEmprestimo(Emprestimo emprestimo);
+    boolean atualizarEmprestimo(Integer idAtualizar, String statusAtualizar, String statusAtual);
     List<EmprestimoVisualizacao> consultarListaEmprestimo();
+    EmprestimoVisualizacao consultarEmprestimoStatus(Integer idConsultar, String statusConsultar);
 }
