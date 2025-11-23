@@ -1,393 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.DetalheLeitorController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-radius: 15; -fx-border-radius: 15;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.DetalheLeitorController">
     <children>
-        <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c7d4f6;">
+        <Pane layoutX="-1.0" prefHeight="401.0" prefWidth="682.0" style="-fx-background-color: #d1e0f7; -fx-border-color: white;">
             <children>
-                <Pane layoutX="13.0" layoutY="13.0" prefHeight="375.0" prefWidth="574.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-background-radius: 7; -fx-border-radius: 7;">
-                    <children>
-                        <Label layoutX="85.0" layoutY="14.0" text="Gerenciamento de Clientes">
-                            <font>
-                                <Font name="Times New Roman Bold" size="24.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="87.0" layoutY="42.0" text="Cadastre e gerencie os leitores da biblioteca">
-                            <font>
-                                <Font name="Times New Roman" size="14.0" />
-                            </font>
-                        </Label>
-
-                        <TextField fx:id="txtBuscarLeitor" accessibleHelp="Use o campo para localizar clientes rapidamente." accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto para busca de clientes" accessibleText="Digite o nome, código ou CPF do cliente para buscar" layoutX="109.0" layoutY="74.0" prefHeight="26.0" prefWidth="425.0" promptText="Buscar por nome, código ou cpf" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </TextField>
-
-                        <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="85.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@caminho/para/seu/icone/search_icon.png" />
-                            </image>
-                        </ImageView>
-
-                        <Button layoutX="454.0" layoutY="14.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="110.0" style="-fx-background-radius: 5; -fx-background-color: #2C8CFF;" text="+ Novo Cliente">
-                            <font>
-                                <Font name="Times New Roman Bold" size="13.0" />
-                            </font>
-                        </Button>
-                        <Pane layoutX="87.0" layoutY="122.0" prefHeight="241.0" prefWidth="470.0" style="-fx-background-color: #ebf0fc; -fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20;">
-                            <children>
-                                <Line endX="369.99993896484375" layoutX="100.0" layoutY="30.0" startX="-100.0" />
-                                <VBox layoutX="86.0" layoutY="-3.0" prefHeight="242.0" prefWidth="69.0">
-                                    <children>
-                                        <Label text="Código">
-                                            <font>
-                                                <Font name="System Bold" size="10.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="20.0" left="15.0" top="10.0" />
-                                            </VBox.margin>
-                                        </Label>
-                                        <Label text="1205">
-                                            <VBox.margin>
-                                                <Insets bottom="10.0" left="21.0" />
-                                            </VBox.margin>
-                                            <font>
-                                                <Font size="8.0" />
-                                            </font>
-                                        </Label>
-                                        <Label text="1205">
-                                            <font>
-                                                <Font size="8.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="10.0" left="21.0" />
-                                            </VBox.margin>
-                                        </Label>
-                                    </children>
-                                </VBox>
-                                <VBox layoutX="150.0" layoutY="-3.0" prefHeight="242.0" prefWidth="116.0">
-                                    <children>
-                                        <Label text="CPF">
-                                            <font>
-                                                <Font name="System Bold" size="10.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="20.0" left="50.0" top="10.0" />
-                                            </VBox.margin>
-                                        </Label>
-                                        <Label text="123.456.789-04">
-                                            <VBox.margin>
-                                                <Insets bottom="10.0" left="28.0" />
-                                            </VBox.margin>
-                                            <font>
-                                                <Font size="8.0" />
-                                            </font>
-                                        </Label>
-                                        <Label text="123.456.789-04">
-                                            <font>
-                                                <Font size="8.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="10.0" left="28.0" />
-                                            </VBox.margin>
-                                        </Label>
-                                    </children>
-                                </VBox>
-                                <VBox layoutX="255.0" layoutY="-3.0" prefHeight="242.0" prefWidth="86.0">
-                                    <children>
-                                        <Label text="Data Cadastro">
-                                            <font>
-                                                <Font name="System Bold" size="10.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="20.0" left="15.0" top="10.0" />
-                                            </VBox.margin>
-                                        </Label>
-                                        <Label text="12/05/2002">
-                                            <VBox.margin>
-                                                <Insets bottom="10.0" left="21.0" />
-                                            </VBox.margin>
-                                            <font>
-                                                <Font size="8.0" />
-                                            </font>
-                                        </Label>
-                                        <Label text="12/05/2022">
-                                            <font>
-                                                <Font size="8.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="10.0" left="21.0" />
-                                            </VBox.margin>
-                                        </Label>
-                                    </children>
-                                </VBox>
-                                <VBox layoutX="344.0" layoutY="-4.0" prefHeight="242.0" prefWidth="129.0">
-                                    <children>
-                                        <Label text="Empréstimos">
-                                            <font>
-                                                <Font name="System Bold" size="10.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="20.0" left="45.0" top="10.0" />
-                                            </VBox.margin>
-                                        </Label>
-                                        <Label text="Total 3">
-                                            <VBox.margin>
-                                                <Insets bottom="10.0" left="62.0" />
-                                            </VBox.margin>
-                                            <font>
-                                                <Font size="8.0" />
-                                            </font>
-                                        </Label>
-                                        <Label text="Total 3">
-                                            <font>
-                                                <Font size="8.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="10.0" left="62.0" />
-                                            </VBox.margin>
-                                        </Label>
-                                    </children>
-                                </VBox>
-                                <VBox layoutX="4.0" layoutY="-2.0" prefHeight="242.0" prefWidth="86.0">
-                                    <children>
-                                        <Label text="Nome">
-                                            <font>
-                                                <Font name="System Bold" size="10.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="17.0" left="15.0" top="10.0" />
-                                            </VBox.margin>
-                                        </Label>
-                                        <Hyperlink text="Chimby Roger">
-                                            <font>
-                                                <Font size="8.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="5.0" />
-                                            </VBox.margin>
-                                        </Hyperlink>
-                                        <Hyperlink text="Chimby Roger">
-                                            <font>
-                                                <Font size="8.0" />
-                                            </font>
-                                            <VBox.margin>
-                                                <Insets bottom="5.0" />
-                                            </VBox.margin>
-                                        </Hyperlink>
-                                    </children>
-                                </VBox>
-                            </children>
-                        </Pane>
-                        <Pane layoutX="73.0" layoutY="59.0" prefHeight="316.0" prefWidth="497.0" style="-fx-background-color: #ebf0fc; -fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20;">
-                            <children>
-                                <Text layoutX="7.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalhes do Cliente" wrappingWidth="214.800048828125">
-                                    <font>
-                                        <Font name="Times New Roman Bold" size="22.0" />
-                                    </font>
-                                </Text>
-                                <Text layoutX="222.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historico de Empréstimos" wrappingWidth="275.9296875">
-                                    <font>
-                                        <Font name="Times New Roman Bold" size="22.0" />
-                                    </font>
-                                </Text>
-                                <ImageView fx:id="imgperson" fitHeight="35.0" fitWidth="34.0" layoutX="14.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../../../../../../../iconperson.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fx:id="imgcpf" fitHeight="35.0" fitWidth="34.0" layoutX="14.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../../../../../../../iconcpf.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fx:id="imgcpf" fitHeight="35.0" fitWidth="34.0" layoutX="14.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../../../../../../../iconcelular.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fx:id="imgemail" fitHeight="35.0" fitWidth="34.0" layoutX="14.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../../../../../../../iconemail.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fx:id="imgendereco" fitHeight="35.0" fitWidth="34.0" layoutX="14.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../../../../../../../iconendereco.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fx:id="imgsenha" fitHeight="35.0" fitWidth="34.0" layoutX="14.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../../../../../../../../OneDrive/Imagens/Screenshots/iconsenha.png" />
-                                    </image>
-                                </ImageView>
-                                <Text fx:id="txtnome" layoutX="57.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="João Silva" wrappingWidth="79.4000244140625">
-                                    <font>
-                                        <Font name="Times New Roman" size="18.0" />
-                                    </font>
-                                </Text>
-                                <Text fx:id="txtcpf" layoutX="56.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="123.456.789-00" wrappingWidth="116.0">
-                                    <font>
-                                        <Font name="Times New Roman" size="18.0" />
-                                    </font>
-                                </Text>
-                                <Text fx:id="txttelefone" layoutX="57.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(11) 98765-4321" wrappingWidth="129.0">
-                                    <font>
-                                        <Font name="Times New Roman" size="18.0" />
-                                    </font>
-                                </Text>
-                                <Text fx:id="txtemail" layoutX="57.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="joao@email.com" wrappingWidth="129.0">
-                                    <font>
-                                        <Font name="Times New Roman" size="18.0" />
-                                    </font>
-                                </Text>
-                                <Text fx:id="txtendereco" layoutX="57.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rua das Flores,123 - São Paulo, SP" wrappingWidth="142.5999755859375">
-                                    <font>
-                                        <Font name="Times New Roman" size="18.0" />
-                                    </font>
-                                </Text>
-                                <Text fx:id="txtsenha" layoutX="57.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0004" wrappingWidth="129.0">
-                                    <font>
-                                        <Font name="Times New Roman" size="18.0" />
-                                    </font>
-                                </Text>
-                                <Pane layoutX="201.0" layoutY="47.0" prefHeight="57.0" prefWidth="292.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;">
-                                    <children>
-                                        <Text layoutX="23.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quarta Asa" wrappingWidth="96.4000244140625">
-                                            <font>
-                                                <Font name="Times New Roman Bold" size="18.0" />
-                                            </font>
-                                        </Text>
-                                        <Text fx:id="txtcpf1" layoutX="23.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20/11/2025 - Aberto" wrappingWidth="157.0">
-                                            <font>
-                                                <Font name="Times New Roman" size="16.0" />
-                                            </font>
-                                        </Text>
-                                        <TextField accessibleHelp="Use para alterar o status do empréstimo (Ex: Devolvido)" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto de status de empréstimo" accessibleText="Campo para mudar o status do livro" layoutX="180.0" layoutY="16.0" prefHeight="25.0" prefWidth="96.0" promptText="Status" />
-                                    </children>
-                                </Pane>
-                                <Pane layoutX="201.0" layoutY="129.0" prefHeight="57.0" prefWidth="292.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;">
-                                    <children>
-                                        <Text layoutX="23.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quarta Asa" wrappingWidth="96.4000244140625">
-                                            <font>
-                                                <Font name="Times New Roman Bold" size="18.0" />
-                                            </font>
-                                        </Text>
-                                        <Text fx:id="txtcpf11" layoutX="23.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20/11/2025 - Aberto" wrappingWidth="157.0">
-                                            <font>
-                                                <Font name="Times New Roman" size="16.0" />
-                                            </font>
-                                        </Text>
-                                        <TextField accessibleHelp="Use para alterar o status do empréstimo (Ex: Devolvido)" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto de status de empréstimo" accessibleText="Campo para mudar o status do livro" layoutX="180.0" layoutY="17.0" prefHeight="25.0" prefWidth="96.0" promptText="Status" />
-                                    </children>
-                                </Pane>
-                                <Pane layoutX="201.0" layoutY="207.0" prefHeight="57.0" prefWidth="292.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20; -fx-background-radius: 20;">
-                                    <children>
-                                        <Text layoutX="23.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quarta Asa" wrappingWidth="96.4000244140625">
-                                            <font>
-                                                <Font name="Times New Roman Bold" size="18.0" />
-                                            </font>
-                                        </Text>
-                                        <Text fx:id="txtcpf111" layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20/11/2025 - Devolvido" wrappingWidth="177.79998779296875">
-                                            <font>
-                                                <Font name="Times New Roman" size="16.0" />
-                                            </font>
-                                        </Text>
-                                        <TextField accessibleHelp="Use para alterar o status do empréstimo (Ex: Devolvido)" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto de status de empréstimo" accessibleText="Campo para mudar o status do livro" layoutX="182.0" layoutY="16.0" prefHeight="25.0" prefWidth="96.0" promptText="Status" />
-                                    </children>
-                                </Pane>
-                                <Button fx:id="btnvoltar" layoutX="378.0" layoutY="274.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: blue;" text="Voltar">
-                                    <font>
-                                        <Font name="Times New Roman Bold" size="18.0" />
-                                    </font>
-                                </Button>
-                                <Button fx:id="btneditar" layoutX="264.0" layoutY="274.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: blue;" text="Editar">
-                                    <font>
-                                        <Font name="Times New Roman Bold" size="18.0" />
-                                    </font>
-                                </Button>
-                                <Button fx:id="btnexcluir" layoutX="152.0" layoutY="274.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: blue;" text="Excluir">
-                                    <font>
-                                        <Font name="Times New Roman Bold" size="18.0" />
-                                    </font>
-                                </Button>
-                            </children>
-                        </Pane>
-                    </children>
-                </Pane>
+                <TableView fx:id="tabelageral" layoutY="51.0" prefHeight="89.0" prefWidth="681.0" style="-fx-background-color: #d1e0f7; -fx-border-color: white;">
+                    <placeholder>
+                        <Label text="" />
+                    </placeholder>
+                    <columns>
+                        <TableColumn fx:id="columnnomecliente" prefWidth="87.20001029968262" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Cliente" />
+                        <TableColumn fx:id="columnCPF" minWidth="8.5333251953125" prefWidth="90.39997100830078" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="CPF" />
+                        <TableColumn fx:id="columnTelefone" prefWidth="123.20001220703125" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Telefone" />
+                        <TableColumn fx:id="columnEmail" prefWidth="97.60003662109375" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="E-mail" />
+                        <TableColumn fx:id="columnlocalizacao" prefWidth="166.39993286132812" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Localização" />
+                        <TableColumn fx:id="columncodigo" prefWidth="112.7999267578125" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Código" />
+                    </columns>
+                </TableView>
+                <Text layoutX="6.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Histórico de Empréstimos" wrappingWidth="326.800048828125">
+                    <font>
+                        <Font name="Times New Roman Bold" size="22.0" />
+                    </font>
+                </Text>
+                <Button fx:id="btnvoltar" layoutX="575.0" layoutY="368.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="96.0" style="-fx-background-color: #2C8CFF;" text="Voltar" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="12.0" />
+                    </font>
+                </Button>
+                <TableView fx:id="tabelageral2" layoutY="231.0" prefHeight="130.0" prefWidth="681.0" style="-fx-background-color: #d1e0f7; -fx-border-color: white;">
+                    <placeholder>
+                        <Label text="" />
+                    </placeholder>
+                    <columns>
+                        <TableColumn fx:id="columnnomelivro1" prefWidth="272.80005502700806" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Nome do Livro" />
+                        <TableColumn fx:id="columndataemprestimo" minWidth="8.5333251953125" prefWidth="239.99990844726562" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Data de Empréstimo" />
+                        <TableColumn fx:id="columnstatus" prefWidth="165.0" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Status" />
+                    </columns>
+                </TableView>
             </children>
         </Pane>
-      <Pane layoutX="25.0" layoutY="29.0" prefHeight="338.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
-         <children>
-            <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagem/detalheleitor/casa.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnGerenciaremprestimo" layoutX="4.0" layoutY="99.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagem/detalheleitor/prateleiras-de-parede.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnGerenciarclientes" layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagem/detalheleitor/lendo-um-livro.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnConfiguracoesusuario" layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagem/detalheleitor/do-utilizador.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnDeslogar" layoutX="4.0" layoutY="282.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagem/detalheleitor/opcao-de-sair.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </Pane>
-      <Button fx:id="btnAcervo" layoutX="29.0" layoutY="88.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
-         <graphic>
-            <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@imagem/detalheleitor/livro-de-capa-preta-fechado.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+        <Text layoutX="6.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalhes do Cliente" wrappingWidth="214.800048828125">
+            <font>
+                <Font name="Times New Roman Bold" size="22.0" />
+            </font>
+        </Text>
     </children>
 </AnchorPane>
