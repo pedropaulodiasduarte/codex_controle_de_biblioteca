@@ -3,19 +3,21 @@ package br.com.codexcb.application.service;
 import br.com.codexcb.application.dao.EmprestimoDAO;
 import br.com.codexcb.application.dao.EmprestimoRepository;
 import br.com.codexcb.application.model.Emprestimo;
+import br.com.codexcb.application.model.EmprestimoVisualizacao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmprestimoServiceTest {
-    EmprestimoRepository emprestimoRepository;
+    private EmprestimoService emprestimoService;
     @BeforeEach
     void setup(){
-        emprestimoRepository = new EmprestimoDAO();
+        emprestimoService = new EmprestimoService(new EmprestimoDAO());
     }
 
     @Test
@@ -27,8 +29,21 @@ class EmprestimoServiceTest {
         LocalDate dataDevolucao = LocalDate.parse("2025-11-10");
         String status = "Pendente";
         Emprestimo emprestimo = new Emprestimo(isbnCodigo, cpfLeitor, dataemprestimo, dataDevolucao, status);
-        assertEquals(true, emprestimoRepository.registrarEmprestimo(emprestimo));
+        assertEquals(true, emprestimoService.registrarEmprestimo(emprestimo));
 
+    }
+
+    @Test
+    @DisplayName("teste de consulta de lista de emprestimo")
+    void consultarListaEmprestimo() {
+        List<EmprestimoVisualizacao> emprestimoVisualizacaos = emprestimoService.consultarListaEmprestimo();
+        assertNotEquals(0, emprestimoVisualizacaos.size());
+        for (int i = 0; i < emprestimoVisualizacaos.size(); i++) {
+            System.out.printf("ID: %d | Nome %s | Título %s%n",
+                    emprestimoVisualizacaos.get(i).getId(),
+                    emprestimoVisualizacaos.get(i).getNomeLeitor(),
+                    emprestimoVisualizacaos.get(i).getTituloLivro());
+        }
     }
 
 }

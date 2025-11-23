@@ -3,7 +3,10 @@ package br.com.codexcb.application.service;
 import br.com.codexcb.application.dao.EmprestimoRepository;
 import br.com.codexcb.application.dao.LeitorDAO;
 import br.com.codexcb.application.model.Emprestimo;
+import br.com.codexcb.application.model.EmprestimoVisualizacao;
 import br.com.codexcb.application.model.Usuario;
+
+import java.util.List;
 
 public class EmprestimoService {
     private final EmprestimoRepository emprestimoRepository;
@@ -14,5 +17,9 @@ public class EmprestimoService {
 
     public boolean registrarEmprestimo(Emprestimo emprestimo) {
         return this.emprestimoRepository.registrarEmprestimo(emprestimo);
+    }
+
+    public List<EmprestimoVisualizacao> consultarListaEmprestimo() {
+return         this.emprestimoRepository.consultarListaEmprestimo();
     }
 }

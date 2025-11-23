@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.GerenciarEmprestimoController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -41,17 +41,16 @@
                         </Button>
                         <Pane layoutX="96.0" layoutY="144.0" prefHeight="241.0" prefWidth="687.0" style="-fx-background-color: #ebf0fc;">
                            <children>
-                              <TableView fx:id="tabelageral" prefHeight="242.0" prefWidth="685.0" style="-fx-background-color: #ebf0fc;">
-
+                              <TableView fx:id="tbEmprestimo" prefHeight="242.0" prefWidth="685.0" style="-fx-background-color: #ebf0fc;" focusTraversable="true">
                                   <placeholder>
                                       <Label text="" /> <!-- Aqui você pode deixar vazio ou personalizar a mensagem -->
                                   </placeholder>
                                   <columns>
-                                  <TableColumn fx:id="columnnomelivro" prefWidth="142.66665649414062" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Livro" />
-                                  <TableColumn fx:id="columnnomecliente"  minWidth="8.5333251953125" prefWidth="141.06666564941406" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Cliente" />
-                                    <TableColumn fx:id="columndataemprestimo"  prefWidth="146.4000244140625" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Data Empréstimo" />
-                                    <TableColumn fx:id="columndatadevolucao"  prefWidth="139.20001220703125" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Data Devolução" />
-                                    <TableColumn fx:id="columnstatus"  prefWidth="111.466552734375" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Status" />
+                                  <TableColumn fx:id="clTitulo" prefWidth="142.66665649414062" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Título Livro" />
+                                  <TableColumn fx:id="clNome"  minWidth="8.5333251953125" prefWidth="141.06666564941406" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Nome Leitor" />
+                                    <TableColumn fx:id="clDataEmprestimo"  prefWidth="146.4000244140625" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Data Empréstimo" />
+                                    <TableColumn fx:id="clDataDevolucao"  prefWidth="139.20001220703125" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Data Devolução" />
+                                    <TableColumn fx:id="clStatus"  prefWidth="111.466552734375" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Status" />
                                 </columns>
                               </TableView>
                            </children>
