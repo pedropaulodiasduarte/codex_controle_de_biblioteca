@@ -35,7 +35,7 @@
                         <Insets top="10.0" />
                     </padding>
                 </Label>
-                <Button fx:id="btnvoltar" layoutX="565.0" layoutY="16.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="Voltar " textAlignment="CENTER" textFill="#fffffff2" onAction="#onClickBtnVoltar">
+                <Button fx:id="btnvoltar" layoutX="565.0" layoutY="16.0" mnemonicParsing="false" onAction="#onClickBtnVoltar" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="Voltar " textAlignment="CENTER" textFill="#fffffff2">
                     <font>
                         <Font name="Times New Roman Bold" size="12.0" />
                     </font>
@@ -48,20 +48,20 @@
                         <Image url="@../../../../../../../../../14578405-icone-de-livro-aberto-em-estilo-cartoon-vetor.jpg" />
                     </image>
                 </ImageView>
-                <Label layoutX="440.0" layoutY="302.0" prefHeight="23.0" prefWidth="83.0" text="Titulo*">
+                <Label layoutX="459.0" layoutY="238.0" prefHeight="23.0" prefWidth="83.0" text="Titulo*">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <TextField fx:id="txttitulo" accessibleHelp="Ex: O Senhor dos Anéis" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite o título do livro" layoutX="439.0" layoutY="330.0" prefHeight="23.0" prefWidth="167.0" promptText="Ex: O Senhor dos Anéis">
+                <TextField fx:id="txttitulo" accessibleHelp="Ex: O Senhor dos Anéis" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite o título do livro" layoutX="458.0" layoutY="264.0" prefHeight="23.0" prefWidth="167.0" promptText="Ex: O Senhor dos Anéis">
                <font>
                   <Font size="10.0" />
                </font></TextField>
-                <TextField fx:id="txtautor" accessibleHelp="Ex: J.R.R. Tolkien" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite o nome do autor" layoutX="28.0" layoutY="331.0" prefHeight="25.0" prefWidth="167.0" promptText="Ex: J.R.R. Tolkien">
+                <TextField fx:id="txtautor" accessibleHelp="Ex: J.R.R. Tolkien" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite o nome do autor" layoutX="458.0" layoutY="199.0" prefHeight="25.0" prefWidth="167.0" promptText="Ex: J.R.R. Tolkien">
                <font>
                   <Font size="10.0" />
                </font></TextField>
-                <Label layoutX="29.0" layoutY="306.0" prefHeight="17.0" prefWidth="83.0" text="Autor(a)*">
+                <Label layoutX="459.0" layoutY="173.0" prefHeight="17.0" prefWidth="83.0" text="Autor(a)*">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -71,17 +71,17 @@
                         <Font name="Times New Roman Bold" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="btncancelar" layoutX="543.0" layoutY="382.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="112.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="Cancelar" textFill="WHITE" onAction="#onClickBtnCancelar">
+                <Button fx:id="btncancelar" layoutX="543.0" layoutY="382.0" mnemonicParsing="false" onAction="#onClickBtnCancelar" prefHeight="23.0" prefWidth="112.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="Cancelar" textFill="WHITE">
                     <font>
                         <Font name="Times New Roman Bold" size="12.0" />
                     </font>
                 </Button>
-                <TextField fx:id="txtisbn" accessibleHelp="Ex: 978-8575031405 (apenas números)" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite o ISBN do livro" layoutX="226.0" layoutY="134.0" prefHeight="25.0" prefWidth="185.0" promptText="Ex: 978-8575031405">
+                <TextField fx:id="txtisbn" accessibleHelp="Ex: 978-8575031405 (apenas números)" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite o ISBN do livro" layoutX="28.0" layoutY="134.0" prefHeight="25.0" prefWidth="185.0" promptText="Ex: 978-8575031405">
                <font>
                   <Font size="10.0" />
                </font></TextField>
 
-                <ComboBox fx:id="cmbIdioma" layoutX="226.0" layoutY="200.0" prefHeight="25.0" prefWidth="185.0" promptText="Selecione o Idioma">
+                <ComboBox fx:id="cmbIdioma" layoutX="28.0" layoutY="200.0" prefHeight="25.0" prefWidth="185.0" promptText="Selecione o Idioma">
                     <items>
                         <FXCollections fx:factory="observableArrayList">
                             <String fx:value="Português" />
@@ -95,44 +95,44 @@
                         </FXCollections>
                     </items>
                 </ComboBox>
-                <TextField fx:id="txteditora" accessibleHelp="Ex: Martins Fontes" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite o nome da editora" layoutX="225.0" layoutY="264.0" prefHeight="25.0" prefWidth="185.0" promptText="Ex: Martins Fontes">
+                <TextField fx:id="txteditora" accessibleHelp="Ex: Martins Fontes" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite o nome da editora" layoutX="27.0" layoutY="264.0" prefHeight="25.0" prefWidth="185.0" promptText="Ex: Martins Fontes">
                <font>
                   <Font size="10.0" />
                </font></TextField>
 
-                <DatePicker fx:id="dtpDataPublicacao" accessibleRole="DATE_PICKER" accessibleText="selecione a data de publicação" layoutX="224.0" layoutY="330.0" prefHeight="25.0" prefWidth="185.0" promptText="DD/MM/AAAA" style="-fx-font-size: 10;" />
-                <Label layoutX="227.0" layoutY="109.0" prefHeight="17.0" prefWidth="83.0" text="ISBN*">
+                <DatePicker fx:id="dtpDataPublicacao" accessibleRole="DATE_PICKER" accessibleText="selecione a data de publicação" layoutX="459.0" layoutY="134.0" prefHeight="25.0" prefWidth="185.0" promptText="DD/MM/AAAA" style="-fx-font-size: 10;" />
+                <Label layoutX="29.0" layoutY="109.0" prefHeight="17.0" prefWidth="83.0" text="ISBN*">
                <font>
                   <Font size="14.0" />
                </font>
                 </Label>
-                <Label layoutX="227.0" layoutY="175.0" prefHeight="17.0" prefWidth="83.0" text="Idioma*">
+                <Label layoutX="29.0" layoutY="175.0" prefHeight="17.0" prefWidth="83.0" text="Idioma*">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label layoutX="226.0" layoutY="239.0" prefHeight="17.0" prefWidth="83.0" text="Editora*">
+                <Label layoutX="28.0" layoutY="239.0" prefHeight="17.0" prefWidth="83.0" text="Editora*">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label layoutX="224.0" layoutY="301.0" prefHeight="23.0" prefWidth="185.0" text="Data de Publicação*">
+                <Label layoutX="459.0" layoutY="108.0" prefHeight="23.0" prefWidth="185.0" text="Data de Publicação*">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <TextField fx:id="txtqntidade" accessibleHelp="Ex: 10" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite a quantidade total de cópias" layoutX="441.0" layoutY="199.0" prefHeight="25.0" prefWidth="167.0" promptText="Ex: 10">
+                <TextField fx:id="txtqntidade" accessibleHelp="Ex: 10" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite a quantidade total de cópias" layoutX="251.0" layoutY="199.0" prefHeight="25.0" prefWidth="167.0" promptText="Ex: 10">
                <font>
                   <Font size="10.0" />
                </font></TextField>
 
-                <Label layoutX="442.0" layoutY="109.0" prefHeight="17.0" prefWidth="83.0" text="Gênero*">
+                <Label layoutX="252.0" layoutY="109.0" prefHeight="17.0" prefWidth="83.0" text="Gênero*">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
 
-                <ComboBox fx:id="cmbGenero" layoutX="442.0" layoutY="134.0" prefHeight="25.0" prefWidth="167.0" promptText="Selecione o Gênero" style="-fx-font-size: 10;">
+                <ComboBox fx:id="cmbGenero" layoutX="252.0" layoutY="134.0" prefHeight="25.0" prefWidth="167.0" promptText="Selecione o Gênero" style="-fx-font-size: 10;">
                     <items>
                         <FXCollections fx:factory="observableArrayList">
                             <String fx:value="Ação e Aventura" />
@@ -191,27 +191,22 @@
                     </items>
                 </ComboBox>
 
-                <Label layoutX="441.0" layoutY="171.0" prefHeight="23.0" prefWidth="112.0" text="Quantidade*">
+                <Label layoutX="251.0" layoutY="171.0" prefHeight="23.0" prefWidth="112.0" text="Quantidade*">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
 
-                <Label layoutX="440.0" layoutY="235.0" prefHeight="23.0" prefWidth="125.0" text="Localização*">
+                <Label layoutX="250.0" layoutY="235.0" prefHeight="23.0" prefWidth="125.0" text="Localização*">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
 
-                <TextField fx:id="txtlocalizacao" accessibleHelp="Ex: Estante A, Prateleira 3" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite a localização física do livro" layoutX="439.0" layoutY="263.0" prefHeight="25.0" prefWidth="167.0" promptText="Ex: Estante A, Prateleira 3">
+                <TextField fx:id="txtlocalizacao" accessibleHelp="Ex: Estante A, Prateleira 3" accessibleRole="TEXT_FIELD" accessibleRoleDescription="campo de texto" accessibleText="digite a localização física do livro" layoutX="249.0" layoutY="263.0" prefHeight="25.0" prefWidth="167.0" promptText="Ex: Estante A, Prateleira 3">
                <font>
                   <Font size="10.0" />
                </font></TextField>
-
-                <Button fx:id="btnadcimg" layoutX="28.0" layoutY="246.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Adicionar imagem">
-               <font>
-                  <Font size="10.0" />
-               </font></Button>
             </children>
         </Pane>
     </children>
