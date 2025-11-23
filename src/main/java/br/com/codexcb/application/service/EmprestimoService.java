@@ -6,6 +6,7 @@ import br.com.codexcb.application.model.Emprestimo;
 import br.com.codexcb.application.model.EmprestimoVisualizacao;
 import br.com.codexcb.application.model.Usuario;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class EmprestimoService {
@@ -27,7 +28,11 @@ return         this.emprestimoRepository.consultarListaEmprestimo();
         return this.emprestimoRepository.consultarEmprestimoStatus(idConsultar, statusConsultar);
     }
 
-    public boolean atualizarEmprestimo(Integer idAtualizar, String statusAtualizar, String statusAtual) {
-        return this.emprestimoRepository.atualizarEmprestimo(idAtualizar, statusAtualizar, statusAtual);
+    public boolean atualizarEmprestimo(Integer idAtualizar, String statusAtualizar, String statusAtual, LocalDate dataDevolucaoAtualizar) {
+        return this.emprestimoRepository.atualizarEmprestimo(idAtualizar, statusAtualizar, statusAtual, dataDevolucaoAtualizar);
+    }
+
+    public List<EmprestimoVisualizacao> consultarListaEmprestimoStatus(String statusConsultar) {
+        return this.emprestimoRepository.consultarListaEmprestimoStatus(statusConsultar);
     }
 }

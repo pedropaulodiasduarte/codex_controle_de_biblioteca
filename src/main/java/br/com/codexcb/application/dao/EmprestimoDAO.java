@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmprestimoDAO implements EmprestimoRepository{
+public class EmprestimoDAO implements EmprestimoRepository {
     @Override
     public boolean registrarEmprestimo(Emprestimo emprestimo) {
         ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
@@ -55,8 +55,8 @@ public class EmprestimoDAO implements EmprestimoRepository{
             //laço de repetição para  Iterar sobre cada linha retornada pelo banco
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
-                String titulo  = resultSet.getString("titulo");
-                String nome  = resultSet.getString("nome");
+                String titulo = resultSet.getString("titulo");
+                String nome = resultSet.getString("nome");
                 java.sql.Date sqlDate = resultSet.getDate("dataemprestimo");
                 LocalDate dataEmprestimo = sqlDate.toLocalDate();
                 sqlDate = resultSet.getDate("dataDevolucao");
@@ -74,7 +74,7 @@ public class EmprestimoDAO implements EmprestimoRepository{
 
     }
 
-    public EmprestimoVisualizacao consultarEmprestimoStatus(Integer idConsultar, String statusConsultar){
+    public EmprestimoVisualizacao consultarEmprestimoStatus(Integer idConsultar, String statusConsultar) {
         ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
         String sqlScript = "select emprestimo.id, livro.titulo, leitor.nome, emprestimo.dataemprestimo, emprestimo.datadevolucao, emprestimo.status from emprestimo inner join leitor on emprestimo.cpffk = leitor.cpf inner join livro on emprestimo.isbncodigofk = livro.isbncodigo where emprestimo.id = ? and emprestimo.status = ?";
 
@@ -87,7 +87,7 @@ public class EmprestimoDAO implements EmprestimoRepository{
             preparedStatement.setString(2, statusConsultar);
 
 
-            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()){
+            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     Integer id = resultSet.getInt("id");
                     String titulo = resultSet.getString("titulo");
@@ -110,16 +110,18 @@ public class EmprestimoDAO implements EmprestimoRepository{
     }
 
     @Override
-    public boolean atualizarEmprestimo(Integer idAtualizar, String statusAtualizar, String statusAtual){
+    public boolean atualizarEmprestimo(Integer idAtualizar, String statusAtualizar, String statusAtual, LocalDate dataDevolucaoAtualizar) {
         ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
-        String sqlScript = "update emprestimo set status = ? where id = ? and status = ?";
+        String sqlScript = "update emprestimo set status = ?, dataDevolucao = ? where id = ? and status = ?";
 
         try (Connection connection = conectaDatabase.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sqlScript)) {
 
             preparedStatement.setString(1, statusAtualizar);
-            preparedStatement.setInt(2, idAtualizar);
-            preparedStatement.setString(3, statusAtual);
+            preparedStatement.setDate(2, java.sql.Date.valueOf(dataDevolucaoAtualizar));
+            preparedStatement.setInt(3, idAtualizar);
+            preparedStatement.setString(4, statusAtual);
+
 
             int linhasAfetadas = preparedStatement.executeUpdate();
 
@@ -131,6 +133,43 @@ public class EmprestimoDAO implements EmprestimoRepository{
             System.out.println("Erro de banco de dados: " + e.getMessage());
         }
         return false;
+
+    }
+
+    @Override
+    public List<EmprestimoVisualizacao> consultarListaEmprestimoStatus(String statusConsultar) {
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        String sqlScript = "select emprestimo.id, livro.titulo, leitor.nome, emprestimo.dataemprestimo, emprestimo.datadevolucao, emprestimo.status from emprestimo inner join leitor on emprestimo.cpffk = leitor.cpf inner join livro on emprestimo.isbncodigofk = livro.isbncodigo where emprestimo.status = ?";
+        List<EmprestimoVisualizacao> listEmprestimoVisualizacao = new ArrayList<>();
+
+        try (Connection connection = conectaDatabase.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sqlScript)) {
+
+            preparedStatement.setString(1, statusConsultar);
+
+            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()) {
+                //ResultSet é uma interface, o qual mediante seu objeto se pode iterar sobre os dados da consulta
+                //laço de repetição para  Iterar sobre cada linha retornada pelo banco
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("id");
+                    String titulo = resultSet.getString("titulo");
+                    String nome = resultSet.getString("nome");
+                    java.sql.Date sqlDate = resultSet.getDate("dataemprestimo");
+                    LocalDate dataEmprestimo = sqlDate.toLocalDate();
+                    sqlDate = resultSet.getDate("dataDevolucao");
+                    LocalDate dataDevolucao = sqlDate.toLocalDate();
+                    String status = resultSet.getString("status");
+
+                    EmprestimoVisualizacao emprestimoVisualizacao = new EmprestimoVisualizacao(id, titulo, nome, dataEmprestimo, dataDevolucao, status);
+                    listEmprestimoVisualizacao.add(emprestimoVisualizacao);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Erro de banco de dados: " + e.getMessage());
+        }
+        return listEmprestimoVisualizacao;
+
 
     }
 }

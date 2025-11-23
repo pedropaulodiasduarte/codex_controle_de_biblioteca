@@ -20,6 +20,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class GerenciarEmprestimoController {
@@ -48,7 +49,7 @@ public class GerenciarEmprestimoController {
         clDataEmprestimo.setCellValueFactory(new PropertyValueFactory<>("dataEmprestimo"));
         clDataDevolucao.setCellValueFactory(new PropertyValueFactory<>("dataDevolucao"));
         clStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
-        carregaListaEmprestimo();
+        carregaListaEmprestimo(emprestimoService.consultarListaEmprestimo());
     }
 
     @FXML
@@ -68,19 +69,32 @@ public class GerenciarEmprestimoController {
             EmprestimoVisualizacao emprestimoSelecionado = selectionModel.getSelectedItem();
             Integer idAtual = emprestimoSelecionado.getId();
             String statusAtual = emprestimoSelecionado.getStatus();
-            emprestimoService.atualizarEmprestimo(idAtual, "Devolvido", statusAtual);
-            carregaListaEmprestimo();
+            LocalDate dataDevolucao = LocalDate.now();
+            emprestimoService.atualizarEmprestimo(idAtual, "Devolvido", statusAtual, dataDevolucao);
+            carregaListaEmprestimo(emprestimoService.consultarListaEmprestimo());
         } else {
             MessageCreator creator = new AlertErrorCreator();
             creator.messageUser("Nenhum Empréstimo Selecionado", "Selecione um empréstimo para ser devolvido!");
         }
     }
 
+    @FXML
+    private void onClickBtnFiltroAtivo() {
+        carregaListaEmprestimo(emprestimoService.consultarListaEmprestimoStatus("Ativo"));
+    }
 
-    private void carregaListaEmprestimo() {
+    @FXML
+    private void onClickBtnFiltroAtrasado() {
+        carregaListaEmprestimo(emprestimoService.consultarListaEmprestimoStatus("Atrasado"));
+    }
+
+    @FXML
+    private void onClickBtnFiltroDevolvido() {
+        carregaListaEmprestimo(emprestimoService.consultarListaEmprestimoStatus("Devolvido"));
+    }
+
+    private void carregaListaEmprestimo(List<EmprestimoVisualizacao> emprestimoVisualizacaosListaBanco) {
         try {
-            EmprestimoService emprestimoService = new EmprestimoService(new EmprestimoDAO());
-            List<EmprestimoVisualizacao> emprestimoVisualizacaosListaBanco = emprestimoService.consultarListaEmprestimo();
             ObservableList<EmprestimoVisualizacao> listaEmprestimo = FXCollections.observableArrayList(emprestimoVisualizacaosListaBanco);
             tbEmprestimo.setItems(listaEmprestimo);
 

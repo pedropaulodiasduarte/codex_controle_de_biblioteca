@@ -58,7 +58,14 @@ class EmprestimoServiceTest {
     @Test
     @DisplayName("update de empréstimo")
     void ataualizarEmprestimo(){
-        assertEquals(true, emprestimoService.atualizarEmprestimo(1, "em atraso", "Devolvido"));
+        LocalDate dataDevolucaoAtualizar = LocalDate.now();
+        assertEquals(true, emprestimoService.atualizarEmprestimo(1, "em atraso", "Devolvido", dataDevolucaoAtualizar));
+    }
+
+    @Test
+    @DisplayName("lista por argumento do status de empréstimo")
+    void consultarListaEmprestimoStatus() {
+        assertNotEquals(null, emprestimoService.consultarListaEmprestimoStatus("pendente"));
     }
 
 }
