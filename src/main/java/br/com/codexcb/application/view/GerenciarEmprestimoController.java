@@ -1,10 +1,16 @@
 package br.com.codexcb.application.view;
 
+import br.com.codexcb.application.dao.EmprestimoDAO;
 import br.com.codexcb.application.model.EmprestimoVisualizacao;
+import br.com.codexcb.application.service.EmprestimoService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.util.List;
 
 public class GerenciarEmprestimoController {
     @FXML private TableView<EmprestimoVisualizacao> tbEmprestimo;
@@ -22,7 +28,18 @@ public class GerenciarEmprestimoController {
         clDataEmprestimo.setCellValueFactory(new PropertyValueFactory<>("dataEmprestimo"));
         clStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         clDataDevolucao.setCellValueFactory(new PropertyValueFactory<>("dataDevolucao"));
-
-
+        carregaListaEmprestimo();
     }
+
+    private void carregaListaEmprestimo() {
+        try {
+            EmprestimoService emprestimoService = new EmprestimoService(new EmprestimoDAO());
+            List<EmprestimoVisualizacao> emprestimoVisualizacaosListaBanco = emprestimoService.consultarListaEmprestimo();
+            ObservableList<EmprestimoVisualizacao> listaEmprestimo = FXCollections.observableArrayList(emprestimoVisualizacaosListaBanco);
+            tbEmprestimo.setItems(listaEmprestimo);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+            }
 }
