@@ -14,7 +14,7 @@
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c7d4f6;">
          <children>
-            <Pane layoutX="304.0" layoutY="26.0" prefHeight="350.0" prefWidth="274.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-width: 3; -fx-border-color: black; -fx-border-radius: 5;">
+            <Pane layoutX="304.0" layoutY="26.0" prefHeight="350.0" prefWidth="274.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-width: 1; -fx-border-color: black; -fx-border-radius: 5;">
                <children>
                   <Label layoutX="50.0" layoutY="26.0" prefHeight="30.0" prefWidth="174.0" text="Acesso ao Sistema">
                      <font>
@@ -28,7 +28,10 @@
                   <Label layoutX="23.0" layoutY="152.0" text="Senha" />
                   <Hyperlink fx:id="btnredefinirsenha" layoutX="152.0" layoutY="211.0" text="Esqueceu a senha?" />
                   <Hyperlink fx:id="btncadastrarbiblioteca" layoutX="187.0" layoutY="246.0" text="Cadastre-se" />
-                  <Button fx:id="btnmenuinicial" layoutX="36.0" layoutY="300.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: #1467C7;" text="Entrar" textFill="WHITE" />
+                  <Button fx:id="btnmenuinicial" layoutX="36.0" layoutY="300.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: #1467C7;" text="Entrar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
                </children>
             </Pane>
             <ImageView fitHeight="120.0" fitWidth="127.0" layoutX="81.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">

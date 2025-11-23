@@ -9,73 +9,73 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="596.0" style="-fx-background-color: c4d4f4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.CadastrarLeitorController">
+<AnchorPane prefHeight="440.0" prefWidth="650.0" style="-fx-background-color: c4d4f4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.CadastrarLeitorController">
     <children>
-        <Pane layoutX="14.0" layoutY="7.0" prefHeight="386.0" prefWidth="575.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+        <Pane layoutX="14.0" layoutY="7.0" prefHeight="422.0" prefWidth="626.0" style="-fx-background-color: white; -fx-background-radius: 10;">
             <children>
-                <Pane layoutX="70.0" layoutY="7.0" prefHeight="369.0" prefWidth="499.0" style="-fx-background-radius: 5%; -fx-background-color: #e6ebff;">
+                <Pane layoutX="73.0" layoutY="24.0" prefHeight="379.0" prefWidth="536.0" style="-fx-background-radius: 15; -fx-background-color: #ebf0fc;">
                     <children>
-                        <Text layoutX="62.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar Novo Cliente" wrappingWidth="340.5367431640625">
+                        <Text layoutX="94.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar Novo Cliente" textAlignment="CENTER" wrappingWidth="340.5367431640625">
                             <font>
-                                <Font name="Times New Roman Bold" size="30.0" />
+                                <Font name="Times New Roman Bold" size="25.0" />
                             </font>
                         </Text>
-                        <Text layoutX="34.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicione um novo leitor ao sistema da biblioteca">
+                        <Text layoutX="81.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicione um novo leitor ao sistema da biblioteca">
                             <font>
                                 <Font name="Times New Roman" size="18.0" />
                             </font>
                         </Text>
-                        <Text layoutX="5.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Cliente*">
+                        <Text layoutX="28.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Cliente*">
                             <font>
-                                <Font name="Times New Roman" size="16.0" />
+                                <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="nomeField" layoutX="5.0" layoutY="91.0" prefHeight="37.0" prefWidth="291.0" promptText="Ex: João da Silva" />
-                        <TextField fx:id="cpfField" layoutX="305.0" layoutY="90.0" prefHeight="37.0" prefWidth="186.0" promptText="ex: 000.000.00-00" />
-                        <Text layoutX="305.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF*">
+                        <TextField fx:id="nomeField" layoutX="28.0" layoutY="119.0" prefHeight="25.0" prefWidth="243.0" promptText="Ex: João da Silva" />
+                        <TextField fx:id="cpfField" layoutX="319.0" layoutY="118.0" prefHeight="20.0" prefWidth="186.0" promptText="ex: 000.000.00-00" />
+                        <Text layoutX="319.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF*">
                             <font>
-                                <Font name="Times New Roman" size="16.0" />
+                                <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Text>
-                        <Text layoutX="5.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço e-mail*">
+                        <Text layoutX="28.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço e-mail*">
                             <font>
-                                <Font name="Times New Roman" size="16.0" />
+                                <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="emailfield" layoutX="5.0" layoutY="157.0" prefHeight="37.0" prefWidth="291.0" promptText="ex: emailexample@mail.com" />
-                        <TextField fx:id="telefoneField" layoutX="5.0" layoutY="280.0" prefHeight="37.0" prefWidth="186.0" promptText="ex: (00) 00000-0000" />
-                        <Text layoutX="5.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone*">
+                        <TextField fx:id="emailfield" layoutX="28.0" layoutY="186.0" prefHeight="25.0" prefWidth="243.0" promptText="ex: emailexample@mail.com" />
+                        <TextField fx:id="telefoneField" layoutX="319.0" layoutY="187.0" prefHeight="25.0" prefWidth="186.0" promptText="ex: (00) 00000-0000" />
+                        <Text layoutX="322.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone*">
                             <font>
-                                <Font name="Times New Roman" size="16.0" />
+                                <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Text>
-                        <Button fx:id="btncancelar" layoutX="312.0" layoutY="324.0" mnemonicParsing="false" onAction="#onClickBtnCancelar" prefHeight="37.0" prefWidth="150.0" style="-fx-background-color: blue;" text="Cancelar">
+                        <Button fx:id="btncancelar" layoutX="323.0" layoutY="337.0" mnemonicParsing="false" onAction="#onClickBtnCancelar" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #2C8CFF;" text="Cancelar" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Times New Roman Bold" size="19.0" />
+                                <Font name="System Bold" size="12.0" />
                             </font>
                         </Button>
-                        <Button fx:id="btnadcleitor" layoutX="59.0" layoutY="324.0" mnemonicParsing="false" onAction="#onClickCadastrarLeitor" prefHeight="37.0" prefWidth="234.0" style="-fx-background-color: blue;" text="+ Adicionar Leitor">
+                        <Button fx:id="btnadcleitor" layoutX="67.0" layoutY="337.0" mnemonicParsing="false" onAction="#onClickCadastrarLeitor" prefHeight="25.0" prefWidth="186.0" style="-fx-background-color: #2C8CFF;" text="+ Adicionar Leitor" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font name="Times New Roman Bold" size="19.0" />
+                                <Font name="System Bold" size="12.0" />
                             </font>
                         </Button>
-                        <Text layoutX="5.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço Completo*">
+                        <Text layoutX="28.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço Completo*">
                             <font>
-                                <Font name="Times New Roman" size="16.0" />
+                                <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="enderecoField" layoutX="5.0" layoutY="219.0" prefHeight="37.0" prefWidth="291.0" promptText="ex: Rua das Rosas, 452" />
-                        <Button fx:id="btnvoltar" layoutX="407.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickBtnVoltar" prefHeight="33.0" prefWidth="78.0" style="-fx-background-color: blue;" text="Voltar">
+                        <TextField fx:id="enderecoField" layoutX="28.0" layoutY="251.0" prefHeight="25.0" prefWidth="243.0" promptText="ex: Rua das Rosas, 452" />
+                        <Button fx:id="btnvoltar" layoutX="446.0" layoutY="8.0" mnemonicParsing="false" onAction="#onClickBtnVoltar" prefHeight="20.0" prefWidth="78.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="Voltar" textFill="WHITE">
                             <font>
-                                <Font name="Times New Roman Bold" size="19.0" />
+                                <Font name="System Bold" size="12.0" />
                             </font>
                         </Button>
                     </children>
                 </Pane>
             </children></Pane>
-      <Pane layoutX="24.0" layoutY="34.0" prefHeight="338.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
+      <Pane layoutX="24.0" layoutY="34.0" prefHeight="369.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
          <children>
-            <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="11.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -84,7 +84,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnGerenciaremprestimo" layoutX="4.0" layoutY="99.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnGerenciaremprestimo" layoutX="4.0" layoutY="116.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -93,7 +93,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnGerenciarclientes" layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnGerenciarclientes" layoutX="4.0" layoutY="169.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -102,7 +102,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnConfiguracoesusuario" layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnConfiguracoesusuario" layoutX="5.0" layoutY="225.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -111,7 +111,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnDeslogar" layoutX="4.0" layoutY="282.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnDeslogar" layoutX="5.0" layoutY="313.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -120,7 +120,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnAcervo" layoutX="4.0" layoutY="61.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnAcervo" layoutX="4.0" layoutY="66.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
