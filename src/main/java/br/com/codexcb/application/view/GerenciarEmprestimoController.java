@@ -1,6 +1,8 @@
 package br.com.codexcb.application.view;
 
 import br.com.codexcb.application.dao.EmprestimoDAO;
+import br.com.codexcb.application.mensagens.AlertErrorCreator;
+import br.com.codexcb.application.mensagens.MessageCreator;
 import br.com.codexcb.application.model.EmprestimoVisualizacao;
 import br.com.codexcb.application.service.EmprestimoService;
 
@@ -21,13 +23,21 @@ import java.io.IOException;
 import java.util.List;
 
 public class GerenciarEmprestimoController {
-    @FXML private TableView<EmprestimoVisualizacao> tbEmprestimo;
-    @FXML private TableColumn<EmprestimoVisualizacao, Integer> clIdEmprestimo;
-    @FXML private TableColumn<EmprestimoVisualizacao, String> clTitulo;
-    @FXML private TableColumn<EmprestimoVisualizacao, String> clNome;
-    @FXML TableColumn<EmprestimoVisualizacao, String> clDataEmprestimo;
-    @FXML TableColumn<EmprestimoVisualizacao, String> clStatus;
-    @FXML TableColumn<EmprestimoVisualizacao, String> clDataDevolucao;
+    private final EmprestimoService emprestimoService = new EmprestimoService(new EmprestimoDAO());
+    @FXML
+    private TableView<EmprestimoVisualizacao> tbEmprestimo;
+    @FXML
+    private TableColumn<EmprestimoVisualizacao, Integer> clIdEmprestimo;
+    @FXML
+    private TableColumn<EmprestimoVisualizacao, String> clTitulo;
+    @FXML
+    private TableColumn<EmprestimoVisualizacao, String> clNome;
+    @FXML
+    TableColumn<EmprestimoVisualizacao, String> clDataEmprestimo;
+    @FXML
+    TableColumn<EmprestimoVisualizacao, String> clStatus;
+    @FXML
+    TableColumn<EmprestimoVisualizacao, String> clDataDevolucao;
 
     @FXML
     private void initialize() {
@@ -47,15 +57,23 @@ public class GerenciarEmprestimoController {
     }
 
     @FXML
-    private void onClickBtnCadastrarEmprestimo(ActionEvent event){
+    private void onClickBtnCadastrarEmprestimo(ActionEvent event) {
         alternaTela(event, "cadastraremprestimo-view.fxml", "Cadastrar Empréstimo");
     }
 
     @FXML
     private void onClickBtnAprovarEntrega(ActionEvent event) {
-        //TableView.TableViewSelectionModel<EmprestimoVisualizacao> selectionModel = tbEmprestimo.getSelectionModel();
-        //EmprestimoVisualizacao emprestimoSelecionado = selectionModel.getSelectedItem();
-
+        TableView.TableViewSelectionModel<EmprestimoVisualizacao> selectionModel = tbEmprestimo.getSelectionModel();
+        if (!selectionModel.isEmpty()) {
+            EmprestimoVisualizacao emprestimoSelecionado = selectionModel.getSelectedItem();
+            Integer idAtual = emprestimoSelecionado.getId();
+            String statusAtual = emprestimoSelecionado.getStatus();
+            emprestimoService.atualizarEmprestimo(idAtual, "Devolvido", statusAtual);
+            carregaListaEmprestimo();
+        } else {
+            MessageCreator creator = new AlertErrorCreator();
+            creator.messageUser("Nenhum Empréstimo Selecionado", "Selecione um empréstimo para ser devolvido!");
+        }
     }
 
 
@@ -85,4 +103,4 @@ public class GerenciarEmprestimoController {
             System.err.println("Erro ao carregar a tela de cadastro de cliente.");
         }
     }
-    }
+}
