@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: c4d4f4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.CadastrarLeitorController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: c4d4f4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.CadastrarEmprestimoController">
     <children>
         <Pane layoutX="26.0" layoutY="12.0" prefHeight="370.0" prefWidth="564.0" style="-fx-background-color: white; -fx-background-radius: 5;">
             <children>
@@ -34,7 +34,7 @@
 
                         <TextField fx:id="txtisbn" accessibleHelp="Exemplo: 978-8575031405" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto para o ISBN do livro" accessibleText="Digite o ISBN do livro a ser emprestado" layoutX="25.0" layoutY="128.0" prefHeight="37.0" prefWidth="186.0" promptText="Ex: 978-8575031405" />
 
-                        <TextField fx:id="txtcodigocliente" accessibleHelp="Exemplo: 42 ou A123" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto para o código do cliente" accessibleText="Digite o código ou ID do cliente" layoutX="25.0" layoutY="210.0" prefHeight="37.0" prefWidth="186.0" promptText="Ex: 42" />
+                        <TextField fx:id="txtcpfleitor" accessibleHelp="Exemplo: 13254697900" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto para o CPF do leitor" accessibleText="Digite o CPF do Leitor" layoutX="25.0" layoutY="210.0" prefHeight="37.0" prefWidth="186.0" promptText="Ex: 12345678900" />
 
                         <Text layoutX="25.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código do Cliente*">
                             <font>
@@ -61,7 +61,7 @@
                                 <Font name="Times New Roman Bold" size="19.0" />
                             </font>
                         </Button>
-                        <Button fx:id="btnadcemprestimo" layoutX="37.0" layoutY="293.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="234.0" style="-fx-background-color: blue;" text="+ Adicionar Empréstimo">
+                        <Button fx:id="btnadcemprestimo" layoutX="37.0" layoutY="293.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="234.0" style="-fx-background-color: blue;" text="+ Adicionar Empréstimo" onAction="#onClickBtnAdcEmprestimo">
                             <font>
                                 <Font name="Times New Roman Bold" size="19.0" />
                             </font>

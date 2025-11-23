@@ -9,6 +9,8 @@ module br.com.codexcb.application {
     requires mysql.connector.j;
     requires javafx.graphics;
     requires javafx.base;
+
+
     //export: torna classes de um pacote visivéis para que outros módulos possam compilar contra elas. - Adiciona permissão para outros módulos usarem as classes do módulo que coloquei como export
     exports br.com.codexcb.application;
     opens br.com.codexcb.application to javafx.fxml;
