@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="455.0" prefWidth="902.0" style="-fx-background-color: #c7d4f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.TelaPrincipalController">
+<AnchorPane prefHeight="510.0" prefWidth="970.0" style="-fx-background-color: #c7d4f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.TelaPrincipalController">
     <children>
         <Pane layoutX="19.0" layoutY="17.0" prefHeight="418.0" prefWidth="858.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 5; -fx-background-radius: 5;">
             <children>

@@ -1,6 +1,8 @@
 package br.com.codexcb.application.view;
 
 import br.com.codexcb.application.dao.LivroDAO;
+import br.com.codexcb.application.mensagens.AlertErrorCreator;
+import br.com.codexcb.application.mensagens.MessageCreator;
 import br.com.codexcb.application.model.EmprestimoVisualizacao;
 import br.com.codexcb.application.model.Livro;
 import br.com.codexcb.application.service.LivroService;
@@ -74,19 +76,15 @@ public class AcervoController {
 
     @FXML
     private void onClickBtnEditarLivro(ActionEvent event) {
-        /*TableView.TableViewSelectionModel<Livro> selectionModel = tbAcervo.getSelectionModel();
+        TableView.TableViewSelectionModel<Livro> selectionModel = tbAcervo.getSelectionModel();
         if (!selectionModel.isEmpty()) {
             Livro livro = selectionModel.getSelectedItem();
-            Integer idAtual = emprestimoSelecionado.getId();
-            String statusAtual = emprestimoSelecionado.getStatus();
-            LocalDate dataDevolucao = LocalDate.now();
-            emprestimoService.atualizarEmprestimo(idAtual, "Devolvido", statusAtual, dataDevolucao);
-            carregaListaEmprestimo(emprestimoService.consultarListaEmprestimo());
-        } else {
+            alternaTela(event, "informacaolivro-view.fxml", "Informação Livro");
+                    } else {
             MessageCreator creator = new AlertErrorCreator();
-            creator.messageUser("Nenhum Empréstimo Selecionado", "Selecione um empréstimo para ser devolvido!");
-        }*/
-        alternaTela(event, "informacaolivro-view.fxml", "Cadastrar Empréstimo");
+            creator.messageUser("Nenhum Livro Selecionado", "Selecione um livro  para ser editado!");
+        }
+        //alternaTela(event, "informacaolivro-view.fxml", "Cadastrar Empréstimo");
     }
 
     @FXML
