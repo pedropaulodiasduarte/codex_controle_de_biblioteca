@@ -12,47 +12,47 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c7d4f6;">
+      <Pane prefHeight="455.0" prefWidth="902.0" style="-fx-background-color: #c7d4f6;">
          <children>
-            <Pane layoutX="14.0" layoutY="12.0" prefHeight="375.0" prefWidth="574.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-background-radius: 7; -fx-border-radius: 7;">
+            <Pane layoutX="14.0" layoutY="12.0" prefHeight="427.0" prefWidth="871.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1; -fx-background-radius: 7; -fx-border-radius: 7;">
                <children>
-                  <TextField layoutX="329.0" layoutY="95.0" prefHeight="25.0" prefWidth="231.0" />
-                  <Label layoutX="329.0" layoutY="75.0" text="Nome da Biblioteca" />
-                  <Label layoutX="159.0" layoutY="19.0" text="Edite suas configurações">
+                  <TextField layoutX="541.0" layoutY="95.0" prefHeight="25.0" prefWidth="231.0" />
+                  <Label layoutX="541.0" layoutY="75.0" text="Nome da Biblioteca" />
+                  <Label layoutX="292.0" layoutY="19.0" text="Edite suas configurações">
                      <font>
                         <Font name="Times New Roman" size="28.0" />
                      </font>
                   </Label>
-                  <Pane layoutX="95.0" layoutY="114.0" prefHeight="139.0" prefWidth="179.0" style="-fx-background-color: #c7d4f6; -fx-border-color: black; -fx-border-width: 1; -fx-background-radius: 7; -fx-border-radius: 7;">
+                  <Pane layoutX="119.0" layoutY="114.0" prefHeight="188.0" prefWidth="294.0" style="-fx-background-color: #c7d4f6; -fx-border-color: black; -fx-border-width: 1; -fx-background-radius: 7; -fx-border-radius: 7;">
                      <children>
-                        <ImageView fitHeight="120.0" fitWidth="127.0" layoutX="31.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="163.0" fitWidth="237.0" layoutX="64.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@imagem/editconfig/prateleiras-de-parede.png" />
                            </image>
                         </ImageView>
                      </children>
                   </Pane>
-                  <Button layoutX="130.0" layoutY="275.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="110.0" style="-fx-background-radius: 5; -fx-background-color: #2C8CFF;" text="Salvar" textFill="WHITE">
+                  <Button layoutX="208.0" layoutY="337.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="110.0" style="-fx-background-radius: 5; -fx-background-color: #2C8CFF;" text="Salvar" textFill="WHITE">
                      <font>
                         <Font name="Times New Roman Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Hyperlink layoutX="374.0" layoutY="341.0" text="Clique aqui para deletar sua conta" />
+                  <Hyperlink layoutX="587.0" layoutY="378.0" text="Clique aqui para deletar sua conta" />
                </children>
             </Pane>
-            <TextField layoutX="342.0" layoutY="158.0" prefHeight="25.0" prefWidth="231.0" />
-            <Label layoutX="342.0" layoutY="138.0" text="CNPJ" />
-            <TextField layoutX="342.0" layoutY="208.0" prefHeight="25.0" prefWidth="231.0" />
-            <Label layoutX="342.0" layoutY="188.0" text="Telefone" />
-            <TextField layoutX="343.0" layoutY="257.0" prefHeight="25.0" prefWidth="231.0" />
-            <Label layoutX="343.0" layoutY="237.0" text="Endereço de E-mail" />
-            <TextField layoutX="343.0" layoutY="306.0" prefHeight="25.0" prefWidth="231.0" />
-            <Label layoutX="343.0" layoutY="286.0" text="Senha" />
+            <TextField layoutX="556.0" layoutY="167.0" prefHeight="25.0" prefWidth="231.0" />
+            <Label layoutX="556.0" layoutY="147.0" text="CNPJ" />
+            <TextField layoutX="557.0" layoutY="225.0" prefHeight="25.0" prefWidth="231.0" />
+            <Label layoutX="557.0" layoutY="205.0" text="Telefone" />
+            <TextField layoutX="558.0" layoutY="284.0" prefHeight="25.0" prefWidth="231.0" />
+            <Label layoutX="558.0" layoutY="264.0" text="Endereço de E-mail" />
+            <TextField layoutX="559.0" layoutY="344.0" prefHeight="25.0" prefWidth="231.0" />
+            <Label layoutX="559.0" layoutY="324.0" text="Senha" />
          </children>
       </Pane>
-      <Pane layoutX="34.0" layoutY="30.0" prefHeight="338.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
+      <Pane layoutX="34.0" layoutY="30.0" prefHeight="393.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
          <children>
-            <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="13.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -61,7 +61,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnGerenciaremprestimo" layoutX="5.0" layoutY="102.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnGerenciaremprestimo" layoutX="5.0" layoutY="125.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -70,7 +70,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnGerenciarclientes" layoutX="4.0" layoutY="144.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnGerenciarclientes" layoutX="4.0" layoutY="180.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -79,7 +79,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnConfiguracoesusuario" layoutX="4.0" layoutY="190.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnConfiguracoesusuario" layoutX="4.0" layoutY="233.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -88,7 +88,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnDeslogar" layoutX="4.0" layoutY="282.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnDeslogar" layoutX="5.0" layoutY="339.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -97,7 +97,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnAcervo" layoutX="4.0" layoutY="61.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnAcervo" layoutX="4.0" layoutY="72.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>

@@ -10,70 +10,70 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: c4d4f4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.CadastrarEmprestimoController">
+<AnchorPane prefHeight="455.0" prefWidth="902.0" style="-fx-background-color: c4d4f4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.CadastrarEmprestimoController">
     <children>
-        <Pane layoutX="26.0" layoutY="12.0" prefHeight="370.0" prefWidth="564.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+        <Pane layoutX="26.0" layoutY="12.0" prefHeight="428.0" prefWidth="848.0" style="-fx-background-color: white; -fx-background-radius: 5;">
             <children>
-                <Pane layoutX="77.0" layoutY="14.0" prefHeight="344.0" prefWidth="469.0" style="-fx-background-radius: 5; -fx-background-color: #ebf0fc; -fx-border-color: black; -fx-border-radius: 5;">
+                <Pane layoutX="77.0" layoutY="14.0" prefHeight="395.0" prefWidth="755.0" style="-fx-background-radius: 5; -fx-background-color: #ebf0fc; -fx-border-color: black; -fx-border-radius: 5;">
                     <children>
-                        <Text fontSmoothingType="LCD" layoutX="26.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar Novo Empréstimo" textAlignment="CENTER" wrappingWidth="416.5367431640625">
+                        <Text fontSmoothingType="LCD" layoutX="156.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar Novo Empréstimo" textAlignment="CENTER" wrappingWidth="416.5367431640625">
                             <font>
                                 <Font name="Times New Roman Bold" size="26.0" />
                             </font>
                         </Text>
-                        <Text layoutX="37.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicione um novo empréstimo ao sistema da biblioteca">
+                        <Text layoutX="167.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicione um novo empréstimo ao sistema da biblioteca">
                             <font>
                                 <Font name="Times New Roman" size="18.0" />
                             </font>
                         </Text>
-                        <Text layoutX="25.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN*">
+                        <Text layoutX="103.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN*">
                             <font>
                                 <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Text>
 
-                        <TextField fx:id="txtisbn" accessibleHelp="Exemplo: 978-8575031405" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto para o ISBN do livro" accessibleText="Digite o ISBN do livro a ser emprestado" layoutX="25.0" layoutY="170.0" prefHeight="23.0" prefWidth="186.0" promptText="Ex: 978-8575031405">
+                        <TextField fx:id="txtisbn" accessibleHelp="Exemplo: 978-8575031405" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto para o ISBN do livro" accessibleText="Digite o ISBN do livro a ser emprestado" layoutX="103.0" layoutY="170.0" prefHeight="23.0" prefWidth="186.0" promptText="Ex: 978-8575031405">
                      <font>
                         <Font size="10.0" />
                      </font></TextField>
 
-                            <TextField fx:id="txtcpfleitor" accessibleHelp="Exemplo: 13254697900" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto para o CPF do leitor" accessibleText="Digite o CPF do Leitor" layoutX="25.0" layoutY="250.0" prefHeight="23.0" prefWidth="186.0" promptText="Ex: 12345678900">
+                            <TextField fx:id="txtcpfleitor" accessibleHelp="Exemplo: 13254697900" accessibleRole="TEXT_FIELD" accessibleRoleDescription="Campo de texto para o CPF do leitor" accessibleText="Digite o CPF do Leitor" layoutX="103.0" layoutY="250.0" prefHeight="23.0" prefWidth="186.0" promptText="Ex: 12345678900">
                          <font>
                             <Font size="10.0" />
                          </font></TextField>
 
-                        <Text layoutX="25.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código do Cliente*">
+                        <Text layoutX="103.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código do Cliente*">
                             <font>
                                 <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Text>
-                        <Text layoutX="263.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data do Empréstimo*">
+                        <Text layoutX="448.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data do Empréstimo*">
                             <font>
                                 <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Text>
 
-                        <DatePicker fx:id="txtdataemprestimo" accessibleHelp="Clique no ícone para abrir o calendário" accessibleRole="DATE_PICKER" accessibleRoleDescription="Seletor de data para o início do empréstimo" accessibleText="Selecione a data de empréstimo" layoutX="263.0" layoutY="170.0" prefHeight="23.0" prefWidth="186.0" promptText="DD/MM/AAAA" style="-fx-font-size: 10;" />
+                        <DatePicker fx:id="txtdataemprestimo" accessibleHelp="Clique no ícone para abrir o calendário" accessibleRole="DATE_PICKER" accessibleRoleDescription="Seletor de data para o início do empréstimo" accessibleText="Selecione a data de empréstimo" layoutX="448.0" layoutY="170.0" prefHeight="23.0" prefWidth="186.0" promptText="DD/MM/AAAA" style="-fx-font-size: 10;" />
 
-                        <DatePicker fx:id="txtdatadevolucao" accessibleHelp="Clique no ícone para abrir o calendário" accessibleRole="DATE_PICKER" accessibleRoleDescription="Seletor de data para a devolução do livro" accessibleText="Selecione a data prevista de devolução" layoutX="263.0" layoutY="250.0" prefHeight="23.0" prefWidth="186.0" promptText="DD/MM/AAAA" style="-fx-font-size: 10;" />
+                        <DatePicker fx:id="txtdatadevolucao" accessibleHelp="Clique no ícone para abrir o calendário" accessibleRole="DATE_PICKER" accessibleRoleDescription="Seletor de data para a devolução do livro" accessibleText="Selecione a data prevista de devolução" layoutX="448.0" layoutY="250.0" prefHeight="23.0" prefWidth="186.0" promptText="DD/MM/AAAA" style="-fx-font-size: 10;" />
 
-                        <Text layoutX="263.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Devolução*">
+                        <Text layoutX="448.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Devolução*">
                             <font>
                                 <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Text>
-                        <Button fx:id="btncancelar" layoutX="346.0" layoutY="313.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="106.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="Cancelar" textFill="WHITE">
+                        <Button fx:id="btncancelar" layoutX="622.0" layoutY="346.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="106.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="Cancelar" textFill="WHITE">
                             <font>
                                 <Font name="Times New Roman Bold" size="12.0" />
                             </font>
                         </Button>
-                        <Button fx:id="btnadcemprestimo" layoutX="151.0" layoutY="312.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="171.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="+ Adicionar Empréstimo" textFill="WHITE" onAction="#onClickBtnAdcEmprestimo">
+                        <Button fx:id="btnadcemprestimo" layoutX="427.0" layoutY="345.0" mnemonicParsing="false" onAction="#onClickBtnAdcEmprestimo" prefHeight="12.0" prefWidth="171.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="+ Adicionar Empréstimo" textFill="WHITE">
                             <font>
                                 <Font name="Times New Roman Bold" size="12.0" />
                             </font>
                         </Button>
 
-                  <Button fx:id="btnvoltar" layoutX="353.0" layoutY="10.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="106.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="Voltar" textFill="WHITE">
+                  <Button fx:id="btnvoltar" layoutX="621.0" layoutY="10.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="106.0" style="-fx-background-color: #2C8CFF; -fx-background-radius: 5;" text="Voltar" textFill="WHITE">
                      <font>
                         <Font name="Times New Roman Bold" size="12.0" />
                      </font>
@@ -81,9 +81,9 @@
                     </children>
                 </Pane>
             </children></Pane>
-      <Pane layoutX="36.0" layoutY="29.0" prefHeight="338.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
+      <Pane layoutX="36.0" layoutY="29.0" prefHeight="395.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
          <children>
-            <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="17.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnMenuinicial" layoutX="4.0" layoutY="12.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -92,7 +92,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnGerenciaremprestimo" layoutX="5.0" layoutY="105.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnGerenciaremprestimo" layoutX="5.0" layoutY="125.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -101,7 +101,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnGerenciarclientes" layoutX="5.0" layoutY="149.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnGerenciarclientes" layoutX="5.0" layoutY="178.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -110,7 +110,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnConfiguracoesusuario" layoutX="5.0" layoutY="201.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnConfiguracoesusuario" layoutX="5.0" layoutY="237.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -119,7 +119,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnDeslogar" layoutX="5.0" layoutY="285.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnDeslogar" layoutX="6.0" layoutY="345.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE" translateY="-11.0">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -128,7 +128,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnAcervo" layoutX="4.0" layoutY="61.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+            <Button fx:id="btnAcervo" layoutX="4.0" layoutY="70.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
