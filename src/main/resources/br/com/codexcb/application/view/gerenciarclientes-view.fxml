@@ -101,11 +101,11 @@
                   <Label text="" />
                </placeholder>
                <columns>
-                  <TableColumn fx:id="columnnomecliente" prefWidth="173.59996032714844" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Nome" />
-                  <TableColumn fx:id="columncodigocliente" minWidth="8.5333251953125" prefWidth="141.5999755859375" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Código" />
-                  <TableColumn fx:id="columncpfcliente" prefWidth="177.60003662109375" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="CPF" />
-                  <TableColumn fx:id="columndatacadastro" prefWidth="138.40008544921875" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Data Cadastro" />
-                  <TableColumn fx:id="columntotalemprestimos" prefWidth="131.9998779296875" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Empréstimos" />
+                  <TableColumn fx:id="clNome" prefWidth="173.59996032714844" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Nome" />
+                  <TableColumn fx:id="clTelefone" minWidth="8.5333251953125" prefWidth="141.5999755859375" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Telefone" />
+                  <TableColumn fx:id="clCpf" prefWidth="177.60003662109375" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="CPF" />
+                  <TableColumn fx:id="clId" prefWidth="138.40008544921875" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="ID Leitor" />
+                  <TableColumn fx:id="clEmprestimo" prefWidth="131.9998779296875" style="-fx-background-color: #ebf0fc; -fx-border-color: white;" text="Empréstimos" />
                </columns>
             </TableView>
          </children>
