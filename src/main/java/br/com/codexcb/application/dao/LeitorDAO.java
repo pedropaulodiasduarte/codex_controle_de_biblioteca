@@ -1,5 +1,6 @@
 package br.com.codexcb.application.dao;
 
+import br.com.codexcb.application.dto.LeitoresStatusDTO;
 import br.com.codexcb.application.model.EmprestimoVisualizacao;
 import br.com.codexcb.application.model.Usuario;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class LeitorDAO implements LeitorRepository {
     @Override
-    public boolean cadastrarLeitor(Usuario leitor){
+    public boolean cadastrarLeitor(Usuario leitor) {
         // por questões de segurança, ? serve para previnir o SQL injection. Também, melhora desempenho
         // se fosse feito via concatenção de Strings, a SQL injection poderia acontecer
         // Via PreparedStatement , os placeholders ?,  são preenchidos.
@@ -38,20 +39,20 @@ public class LeitorDAO implements LeitorRepository {
             System.out.println("Erro de banco de dados: " + e.getMessage());
             //e.printStackTrace();
         }
-return false;
+        return false;
     }
 
     @Override
-    public Usuario consultarLeitorId(int id){
+    public Usuario consultarLeitorId(int id) {
         ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
         String sqlScript = "select * from leitor where id = ?";
 
         try (Connection connection = conectaDatabase.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sqlScript)) {
 
-preparedStatement.setInt(1, id);
+            preparedStatement.setInt(1, id);
 
-            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()){
+            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()) {
                 //ResultSet é uma interface, o qual mediante seu objeto se pode iterar sobre os dados da consulta
                 if (resultSet.next()) {
                     int idRecuperado = resultSet.getInt("id");
@@ -109,7 +110,7 @@ preparedStatement.setInt(1, id);
 
             preparedStatement.setString(1, cpf);
 
-            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()){
+            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()) {
                 //ResultSet é uma interface, o qual mediante seu objeto se pode iterar sobre os dados da consulta
                 if (resultSet.next()) {
                     int idRecuperado = resultSet.getInt("id");
@@ -128,4 +129,30 @@ preparedStatement.setInt(1, id);
         return null;
     }
 
+    @Override
+    public List<LeitoresStatusDTO> consultarLeitoresUltimoStatus() {
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        List<LeitoresStatusDTO> leitoresStatus = new ArrayList<>();
+        String sqlScript = "SELECT l.nome, l.cpf, l.id, l.telefone, COALESCE((SELECT e.status FROM emprestimo e WHERE e.cpffk = l.cpf ORDER BY e.dataEmprestimo DESC, e.id DESC LIMIT 1), 'Não há registro') AS statusultimoemprestimo FROM leitor l ORDER BY l.nome";
+
+        try (Connection connection = conectaDatabase.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sqlScript);
+             java.sql.ResultSet resultSet = preparedStatement.executeQuery()) {
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String nome = resultSet.getString("nome");
+                String cpf = resultSet.getString("cpf");
+                String telefone = resultSet.getString("telefone");
+                String status = resultSet.getString("statusultimoemprestimo");
+
+                LeitoresStatusDTO leitorStatus = new LeitoresStatusDTO(nome, cpf, id, telefone, status);
+                leitoresStatus.add(leitorStatus);
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro de banco de dados na consulta de status: " + e.getMessage());
+        }
+        return leitoresStatus;
     }
+
+}

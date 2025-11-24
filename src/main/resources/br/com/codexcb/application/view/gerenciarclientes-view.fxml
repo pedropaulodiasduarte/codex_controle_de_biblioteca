@@ -96,7 +96,7 @@
                   </Button>
                </children>
             </Pane>
-            <TableView fx:id="tabelageral" layoutX="95.0" layoutY="130.0" prefHeight="288.0" prefWidth="762.0" style="-fx-background-color: #ebf0fc;">
+            <TableView fx:id="tbLeitor" layoutX="95.0" layoutY="130.0" prefHeight="288.0" prefWidth="762.0" style="-fx-background-color: #ebf0fc;">
                <placeholder>
                   <Label text="" />
                </placeholder>

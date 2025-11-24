@@ -1,5 +1,9 @@
 package br.com.codexcb.application.view;
 
+import br.com.codexcb.application.dao.LeitorDAO;
+import br.com.codexcb.application.model.EmprestimoVisualizacao;
+import br.com.codexcb.application.model.Usuario;
+import br.com.codexcb.application.service.LeitorService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,11 +16,27 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class GerenciarClientesController {
+    private final LeitorService leitorService =new LeitorService(new LeitorDAO());
+
+    @FXML
+    private TableView<Usuario> tbLeitor;
+    @FXML
+    private TableColumn<Usuario, String> clNome;
+    @FXML
+    private TableColumn<Usuario, String> clTelefone;
+    @FXML
+    private TableColumn<Usuario, String> clCpf;
+    @FXML
+    private TableColumn<Usuario, String> clId;
+    @FXML
+    private TableColumn<Usuario, String> clEmprestimo;
+
     @FXML
     private TextField txtpesquisa;
 
@@ -41,23 +61,16 @@ public class GerenciarClientesController {
     @FXML
     private Button btnAcervo;
 
-    @FXML
-    private TableView tabelageral;
 
     @FXML
-    private TableColumn columnnomecliente;
-
-    @FXML
-    private TableColumn columncodigocliente;
-
-    @FXML
-    private TableColumn columncpfcliente;
-
-    @FXML
-    private TableColumn columndatacadastro;
-
-    @FXML
-    private TableColumn columntotalemprestimos;
+    private void initialize() {
+        //vinculando (biding) as colunas da tabela com a classe que irá popular a tabela
+        clNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        clCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+        clId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        clTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
+        clEmprestimo.setCellValueFactory(new PropertyValueFactory<>("emprestimo"));
+    }
 
     @FXML
     private void onClickBtnCadastrarLeitor(ActionEvent event) {
