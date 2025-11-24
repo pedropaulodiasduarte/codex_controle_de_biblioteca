@@ -31,7 +31,7 @@
                                               <Font name="Times New Roman" size="14.0" />
                                           </font>
                                       </Label>
-                                      <TextField fx:id="txtpesquisadorlivro" layoutX="90.0" layoutY="74.0" prefHeight="31.0" prefWidth="763.0" promptText="Buscar por título, autor, gênero, ano de publicação ..." style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
+                                      <TextField fx:id="txtpesquisadorlivro" layoutX="119.0" layoutY="74.0" prefHeight="31.0" prefWidth="734.0" promptText="Buscar por título, autor, gênero, ano de publicação ..." style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
                                           <font>
                                               <Font size="14.0" />
                                           </font>
@@ -65,8 +65,26 @@
                                               </ImageView>
                                           </graphic>
                                       </Button>
+                              <Button fx:id="btnpesquisar" accessibleText="Menu Inicial" layoutX="74.0" layoutY="75.0" mnemonicParsing="false" onAction="#onClickBtnMenuInicialAcervoView" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagem/acervo/procurar%20(1).png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                                   </children>
                               </Pane>
+                        <Button fx:id="btnMenuinicial1" accessibleText="Menu Inicial" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#onClickBtnMenuInicialAcervoView" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imagem/acervo/casa.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </AnchorPane>
                         <Pane layoutX="29.0" layoutY="35.0" prefHeight="391.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">

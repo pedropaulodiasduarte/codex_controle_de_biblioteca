@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="455.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.GerenciarClientesController">
+<AnchorPane prefHeight="455.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.codexcb.application.view.GerenciarClientesController">
     <children>
         <Pane prefHeight="455.0" prefWidth="902.0" style="-fx-background-color: #c7d4f6;">
          <children>
@@ -27,7 +27,7 @@
                         <Font name="Times New Roman" size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtpesquisa" layoutX="88.0" layoutY="74.0" prefHeight="31.0" prefWidth="755.0" promptText="Buscar por nome, código ou cpf" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
+                  <TextField fx:id="txtpesquisa" layoutX="127.0" layoutY="74.0" prefHeight="31.0" prefWidth="716.0" promptText="Buscar por nome, código ou cpf" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -36,6 +36,15 @@
                      <font>
                         <Font name="Times New Roman Bold" size="12.0" />
                      </font></Button>
+                  <Button fx:id="btnpesquisar" layoutX="81.0" layoutY="73.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagem/gerenciarclientes/procurar%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </Pane>
             <Pane layoutX="30.0" layoutY="34.0" prefHeight="385.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
