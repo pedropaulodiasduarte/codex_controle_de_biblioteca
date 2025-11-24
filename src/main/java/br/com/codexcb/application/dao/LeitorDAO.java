@@ -146,7 +146,7 @@ public class LeitorDAO implements LeitorRepository {
                 String telefone = resultSet.getString("telefone");
                 String status = resultSet.getString("statusultimoemprestimo");
 
-                LeitoresStatusDTO leitorStatus = new LeitoresStatusDTO(nome, cpf, id, telefone, status);
+                LeitoresStatusDTO leitorStatus = new LeitoresStatusDTO(nome, telefone, cpf, id,  status);
                 leitoresStatus.add(leitorStatus);
             }
         } catch (SQLException e) {

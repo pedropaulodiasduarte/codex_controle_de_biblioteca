@@ -1,9 +1,12 @@
 package br.com.codexcb.application.view;
 
 import br.com.codexcb.application.dao.LeitorDAO;
+import br.com.codexcb.application.dto.LeitoresStatusDTO;
 import br.com.codexcb.application.model.EmprestimoVisualizacao;
 import br.com.codexcb.application.model.Usuario;
 import br.com.codexcb.application.service.LeitorService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,22 +23,23 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public class GerenciarClientesController {
     private final LeitorService leitorService =new LeitorService(new LeitorDAO());
 
     @FXML
-    private TableView<Usuario> tbLeitor;
+    private TableView<LeitoresStatusDTO> tbLeitor;
     @FXML
-    private TableColumn<Usuario, String> clNome;
+    private TableColumn<LeitoresStatusDTO, String> clNome;
     @FXML
-    private TableColumn<Usuario, String> clTelefone;
+    private TableColumn<LeitoresStatusDTO, String> clTelefone;
     @FXML
-    private TableColumn<Usuario, String> clCpf;
+    private TableColumn<LeitoresStatusDTO, String> clCpf;
     @FXML
-    private TableColumn<Usuario, String> clId;
+    private TableColumn<LeitoresStatusDTO, String> clId;
     @FXML
-    private TableColumn<Usuario, String> clEmprestimo;
+    private TableColumn<LeitoresStatusDTO, String> clEmprestimo;
 
     @FXML
     private TextField txtpesquisa;
@@ -69,7 +73,8 @@ public class GerenciarClientesController {
         clCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
         clId.setCellValueFactory(new PropertyValueFactory<>("id"));
         clTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
-        clEmprestimo.setCellValueFactory(new PropertyValueFactory<>("emprestimo"));
+        clEmprestimo.setCellValueFactory(new PropertyValueFactory<>("statusUltimoEmprestimo"));
+        carregaListaLeitorUltimoStatus(leitorService.consultarLeitoresUltimoStatus());
     }
 
     @FXML
@@ -90,5 +95,15 @@ public class GerenciarClientesController {
             System.err.println("Erro ao carregar a tela de cadastro de cliente.");
         }
     }
+
+    private void carregaListaLeitorUltimoStatus(List<LeitoresStatusDTO> leitoresStatusDTOS) {
+        try {
+            ObservableList<LeitoresStatusDTO> lista = FXCollections.observableArrayList(leitoresStatusDTOS);
+            tbLeitor.setItems(lista);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

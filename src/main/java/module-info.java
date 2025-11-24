@@ -30,5 +30,6 @@ module br.com.codexcb.application {
     por segurança, o JPMS tem encapsulamento forte, precisando asssim informar que um módulo acessará outro
     */
     opens br.com.codexcb.application.model to javafx.base;
+    opens br.com.codexcb.application.dto to javafx.base;
 
 }

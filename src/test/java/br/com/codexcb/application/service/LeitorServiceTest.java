@@ -2,6 +2,7 @@ package br.com.codexcb.application.service;
 
 import br.com.codexcb.application.dao.LeitorDAO;
 import br.com.codexcb.application.dao.LeitorRepository;
+import br.com.codexcb.application.dto.LeitoresStatusDTO;
 import br.com.codexcb.application.model.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -62,5 +63,12 @@ class LeitorServiceTest {
         System.out.println("email "+leitor.getEmail());
     }
 
+    @Test
+    @DisplayName("teste de lista de leitores e status do último empréstimo")
+    void consultarLeitoresUltimoStatus(){
+        List<LeitoresStatusDTO> listaLeitor = leitorService.consultarLeitoresUltimoStatus();
+        System.out.println(listaLeitor.get(1).getCpf());
+        System.out.println(listaLeitor.get(1).getStatusUltimoEmprestimo());
+    }
 
 }

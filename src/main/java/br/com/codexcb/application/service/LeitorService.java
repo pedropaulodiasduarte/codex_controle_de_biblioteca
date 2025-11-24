@@ -1,6 +1,7 @@
 package br.com.codexcb.application.service;
 
 import br.com.codexcb.application.dao.LeitorRepository;
+import br.com.codexcb.application.dto.LeitoresStatusDTO;
 import br.com.codexcb.application.model.Usuario;
 
 import java.util.List;
@@ -26,5 +27,9 @@ public class LeitorService {
 
     public List<Usuario> consultarListaUsuario() {
         return this.leitorRepository.consultarListaUsuario();
+    }
+
+    public List<LeitoresStatusDTO> consultarLeitoresUltimoStatus() {
+        return leitorRepository.consultarLeitoresUltimoStatus();
     }
 }

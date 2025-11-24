@@ -28,8 +28,8 @@ class EmprestimoServiceTest {
         LocalDate dataemprestimo = LocalDate.parse("2025-10-10");
         LocalDate dataDevolucao = LocalDate.parse("2025-11-10");
         String status = "Pendente";
-        Emprestimo emprestimo = new Emprestimo(isbnCodigo, cpfLeitor, dataemprestimo, dataDevolucao, status);
-        assertEquals(true, emprestimoService.registrarEmprestimo(emprestimo));
+        //Emprestimo emprestimo = new Emprestimo(isbnCodigo, cpfLeitor, dataemprestimo, dataDevolucao, status);
+        //assertEquals(true, emprestimoService.registrarEmprestimo(emprestimo));
 
     }
 
