@@ -42,21 +42,21 @@ public class CadastrarLeitorController {
     //anotação abaixo, é para  informar a view que este método deve ser executado quando clicar no botão cadastrar cliente, pois no FXML, o botão tem o atributo onAction, que quando a FXMLLoader carrega o FXML da view, ela já procura o método para vincular ao botão
     @FXML
     private void onClickCadastrarLeitor(ActionEvent event) {
-        if (insertLeitor(extrairDadosView()) || encontrarCampoVazio() == false) {
+        if (insertLeitor(extrairDadosView()) || validaDados() == false) {
             messageCreator = new AlertInformationCreator();
             messageCreator.messageUser("Sucesso!", "Leitor cadastrado com sucesso.");
-            abrirTelaPrincipal(event);
+            abrirGerenciarLeitores(event);
         }
     }
 
     @FXML
     private void onClickBtnCancelar(ActionEvent event) {
-        abrirTelaPrincipal(event);
+        abrirGerenciarLeitores(event);
     }
 
     @FXML
     private void onClickBtnVoltar(ActionEvent event) {
-        abrirTelaPrincipal(event);
+        abrirGerenciarLeitores(event);
     }
 
     private Usuario extrairDadosView() {
@@ -75,47 +75,52 @@ public class CadastrarLeitorController {
         return leitorService.cadastrarLeitor(leitor);
     }
 
-    private boolean encontrarCampoVazio() {
-        String mensagem = "Por favor, preencha os campos obrigatórios! (";
-        boolean campoVazio = false;
+    private boolean validaDados() {
+        MessageCreator messageCreator = new AlertErrorCreator();
+
         if (nomeField.getText().trim().isEmpty()) {
-            mensagem+="nome";
-            campoVazio = true;
-        }
-        if (cpfField.getText().trim().isEmpty()){
-            mensagem += ", CPF";
-            campoVazio = true;
-        }
-        if (enderecoField.getText().trim().isEmpty()) {
-            mensagem += ", endereço";
-            campoVazio = true;
-        }
-        if (telefoneField.getText().trim().isEmpty()){
-            mensagem += ", telefone";
-            campoVazio = true;
-        }
-        if (emailfield.getText().trim().isEmpty()) {
-            mensagem+=", e-mail";
-            campoVazio = true;
+            messageCreator.messageUser("Atenção", "O campo NOME é obrigatório e deve ser preenchido.");
+            return true;
         }
 
-        if (campoVazio == true) {
-            mensagem+=")";
-            messageCreator = new AlertErrorCreator();
-            messageCreator.messageUser("Atenção", mensagem);
-            return campoVazio;
+        String cpf = cpfField.getText();
+
+        if (cpf.trim().isEmpty()){
+            messageCreator.messageUser("Atenção", "O campo CPF é obrigatório e deve ser preenchido.");
+            return true;
         }
-        return campoVazio;
+
+        if (!br.com.codexcb.application.util.ValidadorUtil.isCpfValido(cpf)) {
+            messageCreator.messageUser("Dado Inválido", "O CPF informado é inválido (Verifique o número e o dígito verificador).");
+            return true;
+        }
+
+        if (enderecoField.getText().trim().isEmpty()) {
+            messageCreator.messageUser("Atenção", "O campo ENDEREÇO é obrigatório e deve ser preenchido.");
+            return true;
+        }
+
+        if (telefoneField.getText().trim().isEmpty()){
+            messageCreator.messageUser("Atenção", "O campo TELEFONE é obrigatório e deve ser preenchido.");
+            return true;
+        }
+
+        if (emailfield.getText().trim().isEmpty()) {
+            messageCreator.messageUser("Atenção", "O campo E-MAIL é obrigatório e deve ser preenchido.");
+            return true;
+        }
+
+        return false;
     }
 
-    private void abrirTelaPrincipal(ActionEvent event) {
+    private void abrirGerenciarLeitores(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("telaprincipal-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("gerenciarclientes-view.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setTitle("Tela Principal");
+            stage.setTitle("Gerenciar Leitores");
 
         } catch (IOException e) {
             e.printStackTrace();
