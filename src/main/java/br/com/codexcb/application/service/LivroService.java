@@ -24,4 +24,8 @@ public class LivroService {
     public List<Livro> consultarListaLivro() {
         return this.livroRepository.consultarListaLivro();
     }
+
+    public boolean atualizarLivro(Livro livro) {
+        return this.livroRepository.atualizarLivro(livro);
+    }
 }

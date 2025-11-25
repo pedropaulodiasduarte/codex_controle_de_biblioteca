@@ -9,4 +9,5 @@ public interface LivroRepository {
     boolean cadastrarLivro(Livro livro);
     Livro consultarLivroIsbnCodigo(String isbnCodigo);
     List<Livro> consultarListaLivro();
+    boolean atualizarLivro(Livro livro);
 }

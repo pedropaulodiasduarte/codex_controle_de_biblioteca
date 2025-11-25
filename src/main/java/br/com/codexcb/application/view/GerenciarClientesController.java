@@ -82,6 +82,11 @@ public class GerenciarClientesController {
         alternaTela(event, "cadastrarleitor-view.fxml", "Cadastrar Leitor");
     }
 
+    @FXML
+    private void onClickBtnMenuInicial(ActionEvent event) {
+        alternaTela(event, "telaprincipal-view.fxml", "Tela Inicial");
+    }
+
     private void alternaTela(ActionEvent event, String nomeArquivo, String tituloJanela) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(nomeArquivo));
