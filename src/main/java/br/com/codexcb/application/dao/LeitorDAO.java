@@ -146,8 +146,71 @@ public class LeitorDAO implements LeitorRepository {
                 String telefone = resultSet.getString("telefone");
                 String status = resultSet.getString("statusultimoemprestimo");
 
-                LeitoresStatusDTO leitorStatus = new LeitoresStatusDTO(nome, telefone, cpf, id,  status);
+                LeitoresStatusDTO leitorStatus = new LeitoresStatusDTO(nome, telefone, cpf, id, status);
                 leitoresStatus.add(leitorStatus);
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro de banco de dados na consulta de status: " + e.getMessage());
+        }
+        return leitoresStatus;
+    }
+
+    @Override
+    public List<Usuario> consultarLeitorNome(String nome) {
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        String sqlScript = "select * from leitor where nome like ?";
+        List<Usuario> leitores = new ArrayList<>();
+
+        try (Connection connection = conectaDatabase.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sqlScript)) {
+
+            nome += "%";
+            preparedStatement.setString(1, nome);
+
+            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()) {
+                //ResultSet é uma interface, o qual mediante seu objeto se pode iterar sobre os dados da consulta
+                while (resultSet.next()) {
+                    int idRecuperado = resultSet.getInt("id");
+                    String nomeRecuperado = resultSet.getString("nome");
+                    String cpfRecuperado = resultSet.getString("cpf");
+                    String endereco = resultSet.getString("endereco");
+                    String telefone = resultSet.getString("telefone");
+                    String email = resultSet.getString("email");
+                    Usuario leitor = new Usuario(idRecuperado, nomeRecuperado, cpfRecuperado, endereco, telefone, email);
+                    leitores.add(leitor);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Erro de banco de dados: " + e.getMessage());
+        }
+        return leitores;
+
+    }
+
+    @Override
+    public List<LeitoresStatusDTO> consultarLeitoresUltimoStatusNome(String nomePesquisa) {
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        List<LeitoresStatusDTO> leitoresStatus = new ArrayList<>();
+        String sqlScript = "SELECT l.nome, l.cpf, l.id, l.telefone, COALESCE((SELECT e.status FROM emprestimo e WHERE e.cpffk = l.cpf ORDER BY e.dataEmprestimo DESC, e.id DESC LIMIT 1), 'Não há registro') AS statusultimoemprestimo FROM leitor l where nome like ? ORDER BY l.nome";
+
+        try (Connection connection = conectaDatabase.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sqlScript)) {
+
+            nomePesquisa+="%";
+            preparedStatement.setString(1, nomePesquisa);
+            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()) {
+
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("id");
+                    String nome = resultSet.getString("nome");
+                    String cpf = resultSet.getString("cpf");
+                    String telefone = resultSet.getString("telefone");
+                    String status = resultSet.getString("statusultimoemprestimo");
+
+                    LeitoresStatusDTO leitorStatus = new LeitoresStatusDTO(nome, telefone, cpf, id, status);
+                    leitoresStatus.add(leitorStatus);
+                }
             }
         } catch (SQLException e) {
             System.out.println("Erro de banco de dados na consulta de status: " + e.getMessage());

@@ -83,6 +83,13 @@ public class GerenciarClientesController {
     }
 
     @FXML
+    private void onClickBtnPesquisar() {
+        String pesquisa = txtpesquisa.getText();
+        carregaListaLeitorUltimoStatus(leitorService.consultarLeitoresUltimoStatusNome(pesquisa));
+    }
+
+
+    @FXML
     private void onClickBtnMenuInicial(ActionEvent event) {
         alternaTela(event, "telaprincipal-view.fxml", "Tela Inicial");
     }
@@ -109,6 +116,8 @@ public class GerenciarClientesController {
             e.printStackTrace();
         }
     }
+
+
 
 
 }

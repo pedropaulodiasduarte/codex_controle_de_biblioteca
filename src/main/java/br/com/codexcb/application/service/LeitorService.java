@@ -32,4 +32,12 @@ public class LeitorService {
     public List<LeitoresStatusDTO> consultarLeitoresUltimoStatus() {
         return leitorRepository.consultarLeitoresUltimoStatus();
     }
+
+    public List<Usuario> consultarLeitorNome(String nome) {
+        return this.leitorRepository.consultarLeitorNome(nome);
+    }
+
+    public List<LeitoresStatusDTO> consultarLeitoresUltimoStatusNome(String nomePesquisa){
+        return this.leitorRepository.consultarLeitoresUltimoStatusNome(nomePesquisa);
+    }
 }
