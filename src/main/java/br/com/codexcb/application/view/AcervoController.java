@@ -79,12 +79,24 @@ public class AcervoController {
         TableView.TableViewSelectionModel<Livro> selectionModel = tbAcervo.getSelectionModel();
         if (!selectionModel.isEmpty()) {
             Livro livro = selectionModel.getSelectedItem();
-            alternaTela(event, "informacaolivro-view.fxml", "Informação Livro");
-                    } else {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("informacaolivro-view.fxml"));
+                Parent root = loader.load();
+                InformacaoLivroController controller = loader.getController();
+                controller.setLivro(livro);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.setTitle("Editar Livro");
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.err.println("Erro ao carregar a tela de cadastro de cliente.");
+            }
+
+        } else {
             MessageCreator creator = new AlertErrorCreator();
             creator.messageUser("Nenhum Livro Selecionado", "Selecione um livro  para ser editado!");
         }
-        //alternaTela(event, "informacaolivro-view.fxml", "Cadastrar Empréstimo");
     }
 
     @FXML

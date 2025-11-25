@@ -95,7 +95,7 @@
             </Button>
             </children>
         </Pane>
-      <TextField fx:id="txtnovonomeautor" layoutX="38.0" layoutY="131.0" prefHeight="6.0" prefWidth="124.0" promptText="Novo nome do Autor">
+      <TextField fx:id="txtAutor" layoutX="38.0" layoutY="131.0" prefHeight="6.0" prefWidth="124.0" promptText="Novo nome do Autor">
          <font>
             <Font size="10.0" />
          </font>

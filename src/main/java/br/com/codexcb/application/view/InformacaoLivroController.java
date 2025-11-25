@@ -1,5 +1,6 @@
 package br.com.codexcb.application.view;
 
+import br.com.codexcb.application.model.Livro;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,12 +16,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class InformacaoLivroController {
+    private Livro livro;
 
-    @FXML
-    private TextField txtCampoBusca;
-
-    @FXML
-    private ImageView imglivro;
     @FXML
     private Text txtnomelivro;
     @FXML
@@ -73,6 +70,12 @@ public class InformacaoLivroController {
             e.printStackTrace();
             System.err.println("Erro ao carregar a tela de cadastro de cliente.");
         }
+    }
+
+    public void setLivro(Livro dadosLivro) {
+        this.livro = dadosLivro;
+ txtnomeautor.setText(livro.getTitulo());
+
     }
 
 }
