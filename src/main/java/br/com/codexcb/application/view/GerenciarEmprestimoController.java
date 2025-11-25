@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -22,6 +23,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class GerenciarEmprestimoController {
@@ -39,14 +41,17 @@ public class GerenciarEmprestimoController {
     @FXML
     private TableColumn<EmprestimoVisualizacao, String> clNome;
     @FXML
-    TableColumn<EmprestimoVisualizacao, String> clDataEmprestimo;
+    TableColumn<EmprestimoVisualizacao, LocalDate> clDataEmprestimo;
     @FXML
     TableColumn<EmprestimoVisualizacao, String> clStatus;
     @FXML
-    TableColumn<EmprestimoVisualizacao, String> clDataDevolucao;
+    TableColumn<EmprestimoVisualizacao, LocalDate> clDataDevolucao;
 
     @FXML
     private void initialize() {
+        //formatando a data
+        final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
         //vinculando (biding) as colunas da tabela com a classe que irá popular a tabela
         clIdEmprestimo.setCellValueFactory(new PropertyValueFactory<>("id"));
         clTitulo.setCellValueFactory(new PropertyValueFactory<>("tituloLivro"));
@@ -54,6 +59,33 @@ public class GerenciarEmprestimoController {
         clDataEmprestimo.setCellValueFactory(new PropertyValueFactory<>("dataEmprestimo"));
         clDataDevolucao.setCellValueFactory(new PropertyValueFactory<>("dataDevolucao"));
         clStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        clDataEmprestimo.setCellFactory(column -> new TableCell<>() {
+            @Override
+            protected void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                if (empty || date == null) {
+                    setText(null);
+                } else {
+                    // Formata a data para a string "dd-MM-yyyy"
+                    setText(dateTimeFormatter.format(date));
+                }
+            }
+        });
+
+        clDataDevolucao.setCellFactory(column -> new TableCell<EmprestimoVisualizacao, LocalDate>() {
+            @Override
+            protected void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                if (empty || date == null) {
+                    setText(null);
+                } else {
+                    // Formata a data para a string "dd-MM-yyyy"
+                    setText(dateTimeFormatter.format(date));
+                }
+            }
+        });
+
         carregaListaEmprestimo(emprestimoService.consultarListaEmprestimo());
     }
 
