@@ -73,7 +73,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="adicionartempo" layoutX="810.0" layoutY="108.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="46.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                        <Button fx:id="btnadicionartempo" layoutX="810.0" layoutY="108.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="46.0" style="-fx-background-color: white; -fx-background-radius: 10;" accessibleText="Adicionar tempo extra no empréstimo" onAction="#onClickBtnAdicionarTempo">
                            <font>
                               <Font name="Times New Roman" size="12.0" />
                            </font>

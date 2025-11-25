@@ -106,6 +106,24 @@ public class GerenciarEmprestimoController {
     }
 
     @FXML
+    private void onClickBtnAdicionarTempo() {
+        TableView.TableViewSelectionModel<EmprestimoVisualizacao> selectionModel = tbEmprestimo.getSelectionModel();
+        if (!selectionModel.isEmpty()) {
+            EmprestimoVisualizacao emprestimoSelecionado = selectionModel.getSelectedItem();
+            Integer idAtual = emprestimoSelecionado.getId();
+            String statusAtual = emprestimoSelecionado.getStatus();
+            LocalDate dataAtual = LocalDate.now();
+            LocalDate dataDevolucaoExtra = dataAtual.plusDays(5);
+            emprestimoService.atualizarEmprestimo(idAtual, "Ativo", statusAtual, dataDevolucaoExtra);
+            carregaListaEmprestimo(emprestimoService.consultarListaEmprestimo());
+        } else {
+            MessageCreator creator = new AlertErrorCreator();
+            creator.messageUser("Nenhum Empréstimo Selecionado", "Selecione um empréstimo para ser devolvido!");
+        }
+
+    }
+
+    @FXML
     private void onClickBtnAprovarEntrega(ActionEvent event) {
         TableView.TableViewSelectionModel<EmprestimoVisualizacao> selectionModel = tbEmprestimo.getSelectionModel();
         if (!selectionModel.isEmpty()) {
