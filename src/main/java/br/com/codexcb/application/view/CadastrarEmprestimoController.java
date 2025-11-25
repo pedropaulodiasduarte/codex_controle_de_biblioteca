@@ -59,6 +59,16 @@ public class CadastrarEmprestimoController {
         }
     }
 
+    @FXML
+    private void onClickBtnCancelar(ActionEvent event) {
+        alternaTela(event, "gerenciaremprestimo-view.fxml", "Gerenciar Empréstimo");
+    }
+
+    @FXML
+    private void onClickBtnVoltar(ActionEvent event) {
+        alternaTela(event, "gerenciaremprestimo-view.fxml", "Gerenciar Empréstimo");
+    }
+
     private Emprestimo extrairDadosView() {
         String isbnCodigoLivro = txtisbn.getText();
         String cpfLeitor = txtcpfleitor.getText();

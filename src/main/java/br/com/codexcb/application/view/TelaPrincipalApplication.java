@@ -18,7 +18,7 @@ public class TelaPrincipalApplication extends Application {
         // Define o tamanho inicial da janela
         Scene scene = new Scene(fxmlLoader.load(), 902, 455);
 
-        stage.setTitle("Sistema Cliente Fiel - Menu");
+        stage.setTitle("Tela Inicial - Codex");
         stage.setScene(scene);
         stage.show();
     }
