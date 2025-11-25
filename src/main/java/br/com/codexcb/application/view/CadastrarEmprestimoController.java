@@ -49,6 +49,16 @@ public class CadastrarEmprestimoController {
     private Button btnAcervo;
 
     @FXML
+    private void initialize() {
+        txtdataemprestimo.setValue(LocalDate.now());
+        calcularDataDevolucao();
+        txtdataemprestimo.valueProperty().addListener((observable, oldValue, newValue) -> {
+            calcularDataDevolucao();
+        });
+    }
+
+
+    @FXML
     private void onClickBtnAdcEmprestimo(ActionEvent event) {
         if (validaDadosEmprestimo()) {
             if (insertDadosEmprestimo(extrairDadosView())) {
@@ -146,5 +156,16 @@ public class CadastrarEmprestimoController {
 
         return true;
     }
-}
 
+    private void calcularDataDevolucao() {
+        LocalDate dataEmprestimo = txtdataemprestimo.getValue();
+        if (dataEmprestimo != null) {
+            LocalDate dataDevolucao = dataEmprestimo.plusDays(10);
+            txtdatadevolucao.setValue(dataDevolucao);
+        } else {
+            txtdataemprestimo.setValue(LocalDate.now());
+            LocalDate dataDevolucao = dataEmprestimo.plusDays(10);
+            txtdatadevolucao.setValue(dataDevolucao);
+        }
+    }
+}
