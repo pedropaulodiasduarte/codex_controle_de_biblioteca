@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -25,6 +26,10 @@ import java.util.List;
 
 public class GerenciarEmprestimoController {
     private final EmprestimoService emprestimoService = new EmprestimoService(new EmprestimoDAO());
+
+    @FXML
+    private TextField txtPesquisar;
+
     @FXML
     private TableView<EmprestimoVisualizacao> tbEmprestimo;
     @FXML
@@ -55,6 +60,12 @@ public class GerenciarEmprestimoController {
     @FXML
     private void onClickBtnMenuInicial(ActionEvent event) {
         alternaTela(event, "telaprincipal-view.fxml", "Tela Inicial");
+    }
+
+    @FXML
+    private void onClickBtnPesquisar() {
+        String pesquisa = txtPesquisar.getText();
+        carregaListaEmprestimo(emprestimoService.consultarListaEmprestimoNome(pesquisa));
     }
 
     @FXML

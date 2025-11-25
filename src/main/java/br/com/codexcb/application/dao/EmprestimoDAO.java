@@ -172,4 +172,41 @@ public class EmprestimoDAO implements EmprestimoRepository {
 
 
     }
+
+    @Override
+    public List<EmprestimoVisualizacao> consultarListaEmprestimoNome(String nomePesquisa) {
+        ConectaDatabase conectaDatabase = ConectaDatabase.getInstanceSingleton();
+        String sqlScript = "select emprestimo.id, livro.titulo, leitor.nome, emprestimo.dataemprestimo, emprestimo.datadevolucao, emprestimo.status from emprestimo inner join leitor on emprestimo.cpffk = leitor.cpf inner join livro on emprestimo.isbncodigofk = livro.isbncodigo where nome like ?";
+        List<EmprestimoVisualizacao> listEmprestimoVisualizacao = new ArrayList<>();
+
+        try (Connection connection = conectaDatabase.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sqlScript)) {
+
+
+            nomePesquisa+="%";
+            preparedStatement.setString(1, nomePesquisa);
+
+            try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()) {
+                //laço de repetição para  Iterar sobre cada linha retornada pelo banco
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("id");
+                    String titulo = resultSet.getString("titulo");
+                    String nome = resultSet.getString("nome");
+                    java.sql.Date sqlDate = resultSet.getDate("dataemprestimo");
+                    LocalDate dataEmprestimo = sqlDate.toLocalDate();
+                    sqlDate = resultSet.getDate("dataDevolucao");
+                    LocalDate dataDevolucao = sqlDate.toLocalDate();
+                    String status = resultSet.getString("status");
+
+                    EmprestimoVisualizacao emprestimoVisualizacao = new EmprestimoVisualizacao(id, titulo, nome, dataEmprestimo, dataDevolucao, status);
+                    listEmprestimoVisualizacao.add(emprestimoVisualizacao);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Erro de banco de dados: " + e.getMessage());
+        }
+        return listEmprestimoVisualizacao;
+
+    }
 }

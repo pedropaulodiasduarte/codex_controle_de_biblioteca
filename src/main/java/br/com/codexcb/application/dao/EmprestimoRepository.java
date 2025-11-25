@@ -12,4 +12,5 @@ public interface EmprestimoRepository {
     List<EmprestimoVisualizacao> consultarListaEmprestimo();
     EmprestimoVisualizacao consultarEmprestimoStatus(Integer idConsultar, String statusConsultar);
     List<EmprestimoVisualizacao> consultarListaEmprestimoStatus(String statusConsultar);
+    List<EmprestimoVisualizacao> consultarListaEmprestimoNome(String nomePesquisa);
 }

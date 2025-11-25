@@ -35,4 +35,8 @@ return         this.emprestimoRepository.consultarListaEmprestimo();
     public List<EmprestimoVisualizacao> consultarListaEmprestimoStatus(String statusConsultar) {
         return this.emprestimoRepository.consultarListaEmprestimoStatus(statusConsultar);
     }
+
+    public List<EmprestimoVisualizacao> consultarListaEmprestimoNome(String nomePesquisa) {
+        return emprestimoRepository.consultarListaEmprestimoNome(nomePesquisa);
+    }
 }

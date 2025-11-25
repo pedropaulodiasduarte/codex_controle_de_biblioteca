@@ -29,7 +29,7 @@
                               <Font name="Times New Roman" size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="pesquisador" layoutX="138.0" layoutY="74.0" prefHeight="31.0" prefWidth="720.0" promptText="Buscar por livro ou cliente" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
+                        <TextField fx:id="txtPesquisar" layoutX="138.0" layoutY="74.0" prefHeight="31.0" prefWidth="720.0" promptText="Buscar por  leitor" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -85,7 +85,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="btnpesquisar" accessibleText="Tela Inicial" layoutX="94.0" layoutY="73.0" mnemonicParsing="false" onAction="#onClickBtnMenuInicial" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                        <Button fx:id="btnpesquisar" accessibleText="Pesquisar" layoutX="94.0" layoutY="73.0" mnemonicParsing="false" onAction="#onClickBtnPesquisar" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE" >
                            <graphic>
                               <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
