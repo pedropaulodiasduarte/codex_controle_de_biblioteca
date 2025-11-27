@@ -31,7 +31,7 @@
                                               <Font name="Times New Roman" size="14.0" />
                                           </font>
                                       </Label>
-                                      <TextField fx:id="txtpesquisadorlivro" layoutX="119.0" layoutY="74.0" prefHeight="31.0" prefWidth="734.0" promptText="Buscar por título, autor, gênero, ano de publicação ..." style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
+                                      <TextField fx:id="txtPesquisar" layoutX="119.0" layoutY="74.0" prefHeight="31.0" prefWidth="734.0" promptText="Buscar por título, autor, gênero, ano de publicação ..." style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 12; -fx-background-radius: 12;">
                                           <font>
                                               <Font size="14.0" />
                                           </font>
@@ -65,7 +65,7 @@
                                               </ImageView>
                                           </graphic>
                                       </Button>
-                              <Button fx:id="btnpesquisar" accessibleText="Menu Inicial" layoutX="74.0" layoutY="75.0" mnemonicParsing="false" onAction="#onClickBtnMenuInicialAcervoView" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE">
+                              <Button fx:id="btnPesquisar" accessibleText="Pesquisar" layoutX="74.0" layoutY="75.0" mnemonicParsing="false" onAction="#onClickBtnPesquisar" prefHeight="21.0" prefWidth="18.0" style="-fx-background-color: white;" textFill="WHITE" >
                                  <graphic>
                                     <ImageView fitHeight="31.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                        <image>

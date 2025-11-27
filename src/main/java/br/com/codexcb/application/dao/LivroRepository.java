@@ -10,4 +10,5 @@ public interface LivroRepository {
     Livro consultarLivroIsbnCodigo(String isbnCodigo);
     List<Livro> consultarListaLivro();
     boolean atualizarLivro(Livro livro);
+    List<Livro> consultarListaLivroNome(String tituloPesquisa);
 }

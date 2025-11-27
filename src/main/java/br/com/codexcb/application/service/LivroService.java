@@ -2,6 +2,7 @@ package br.com.codexcb.application.service;
 
 import br.com.codexcb.application.dao.LivroDAO;
 import br.com.codexcb.application.dao.LivroRepository;
+import br.com.codexcb.application.dto.LeitoresStatusDTO;
 import br.com.codexcb.application.model.Livro;
 
 import java.util.List;
@@ -27,5 +28,9 @@ public class LivroService {
 
     public boolean atualizarLivro(Livro livro) {
         return this.livroRepository.atualizarLivro(livro);
+    }
+
+    public List<Livro> consultarListaLivroNome(String tituloPesquisa){
+        return this.livroRepository.consultarListaLivroNome(tituloPesquisa);
     }
 }

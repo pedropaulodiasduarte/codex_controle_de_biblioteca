@@ -27,7 +27,7 @@ import java.util.List;
 public class AcervoController {
     private final LivroService livroService = new LivroService(new LivroDAO());
     @FXML
-    private TextField txtBuscaAcervo;
+    private TextField txtPesquisar;
 
     @FXML
     private Button btncadastrarlivro;
@@ -114,6 +114,13 @@ public class AcervoController {
         }
 
     }
+
+    @FXML
+    private void onClickBtnPesquisar(){
+        String titulo = txtPesquisar.getText();
+        carregaListaEmprestimo(livroService.consultarListaLivroNome(titulo));
+    }
+
 
     @FXML
     private void onClickBtnMenuInicialAcervoView(ActionEvent event) {
