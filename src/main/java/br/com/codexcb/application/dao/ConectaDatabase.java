@@ -1,5 +1,5 @@
-package br.com.codexcb.application.dao;
 
+package br.com.codexcb.application.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
